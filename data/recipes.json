@@ -1,0 +1,1702 @@
+[
+  {
+    "id": "r1",
+    "name": "Tomato Garlic Pasta",
+    "cuisine": "Italian",
+    "time_min": 25,
+    "ingredients": [
+      "pasta",
+      "tomato",
+      "garlic",
+      "olive oil",
+      "basil",
+      "onion"
+    ],
+    "instructions": "Bring a large pot of salted water to a boil and cook the pasta until al dente; reserve 1/2 cup pasta water, then drain. Meanwhile, finely chop the onion and garlic, and dice the tomatoes. Heat olive oil in a wide pan over medium heat. Soften the onion for 3–4 minutes, then add garlic for 30 seconds. Add the tomatoes and a pinch of salt. Simmer 8–10 minutes until saucy, adding a splash of pasta water if needed. Toss the drained pasta into the sauce with torn basil. Adjust seasoning and serve hot.",
+    "image": "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Bring a large pot of salted water to a boil and cook the pasta until al dente; reserve 1/2 cup pasta water, then drain.",
+      "Meanwhile, finely chop the onion and garlic, and dice the tomatoes.",
+      "Heat olive oil in a wide pan over medium heat. Soften the onion for 3–4 minutes, then add garlic for 30 seconds.",
+      "Add the tomatoes and a pinch of salt. Simmer 8–10 minutes until saucy, adding a splash of pasta water if needed.",
+      "Toss the drained pasta into the sauce with torn basil. Adjust seasoning and serve hot."
+    ],
+    "calories": 420,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=tomato+garlic+pasta+recipe",
+    "diet": "vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "pasta",
+        "amount": "200 g dry"
+      },
+      {
+        "ingredient": "tomato",
+        "amount": "2 medium (250 g), diced"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "olive oil",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "basil",
+        "amount": "10 g (a small handful), torn"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      }
+    ]
+  },
+  {
+    "id": "r2",
+    "name": "Veggie Fried Rice",
+    "cuisine": "Asian",
+    "time_min": 20,
+    "ingredients": [
+      "rice",
+      "egg",
+      "carrot",
+      "onion",
+      "garlic",
+      "peas",
+      "soy sauce"
+    ],
+    "instructions": "Dice the carrot and onion, and mince the garlic. Beat the eggs in a small bowl. Heat a little oil in a wok or large pan over medium-high heat. Scramble the eggs, then set aside. In the same pan, stir-fry onion, carrot, garlic, and peas for 2–3 minutes until just tender. Add leftover cooked rice, breaking up clumps. Stir-fry 3–4 minutes until hot and lightly toasted. Return the eggs, add soy sauce, toss well, and serve immediately.",
+    "image": "https://www.themealdb.com/images/media/meals/wuyd2h1765655837.jpg",
+    "steps": [
+      "Dice the carrot and onion, and mince the garlic. Beat the eggs in a small bowl.",
+      "Heat a little oil in a wok or large pan over medium-high heat. Scramble the eggs, then set aside.",
+      "In the same pan, stir-fry onion, carrot, garlic, and peas for 2–3 minutes until just tender.",
+      "Add leftover cooked rice, breaking up clumps. Stir-fry 3–4 minutes until hot and lightly toasted.",
+      "Return the eggs, add soy sauce, toss well, and serve immediately."
+    ],
+    "calories": 380,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=vegetable+fried+rice+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "rice",
+        "amount": "300 g cooked (about 150 g dry)"
+      },
+      {
+        "ingredient": "egg",
+        "amount": "3 large"
+      },
+      {
+        "ingredient": "carrot",
+        "amount": "1 medium (100 g), diced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "peas",
+        "amount": "100 g (3/4 cup), frozen"
+      },
+      {
+        "ingredient": "soy sauce",
+        "amount": "2 tbsp"
+      }
+    ]
+  },
+  {
+    "id": "r3",
+    "name": "Chickpea Curry",
+    "cuisine": "Indian",
+    "time_min": 35,
+    "ingredients": [
+      "chickpeas",
+      "onion",
+      "tomato",
+      "garlic",
+      "ginger",
+      "cumin",
+      "rice",
+      "spinach"
+    ],
+    "instructions": "Rinse and drain the chickpeas. Finely chop onion, garlic, and ginger; dice the tomatoes. Heat oil in a pot over medium heat. Cook onion until soft, then add garlic, ginger, and cumin for 1 minute. Stir in tomatoes and cook until they break down into a thick base, about 5 minutes. Add chickpeas and enough water to barely cover. Simmer 12–15 minutes until flavors meld. Fold in spinach until wilted. Taste and adjust salt. Serve over warm rice.",
+    "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Rinse and drain the chickpeas. Finely chop onion, garlic, and ginger; dice the tomatoes.",
+      "Heat oil in a pot over medium heat. Cook onion until soft, then add garlic, ginger, and cumin for 1 minute.",
+      "Stir in tomatoes and cook until they break down into a thick base, about 5 minutes.",
+      "Add chickpeas and enough water to barely cover. Simmer 12–15 minutes until flavors meld.",
+      "Fold in spinach until wilted. Taste and adjust salt. Serve over warm rice."
+    ],
+    "calories": 450,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=chickpea+curry+recipe",
+    "diet": "vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "chickpeas",
+        "amount": "1 can (400 g), drained and rinsed"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "tomato",
+        "amount": "2 medium (250 g), diced"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "ginger",
+        "amount": "1 tbsp (2 cm piece), grated"
+      },
+      {
+        "ingredient": "cumin",
+        "amount": "1 tsp, ground"
+      },
+      {
+        "ingredient": "rice",
+        "amount": "150 g dry, cooked for serving"
+      },
+      {
+        "ingredient": "spinach",
+        "amount": "100 g (2 large handfuls)"
+      }
+    ]
+  },
+  {
+    "id": "r4",
+    "name": "Shakshuka",
+    "cuisine": "Middle Eastern",
+    "time_min": 30,
+    "ingredients": [
+      "egg",
+      "tomato",
+      "onion",
+      "garlic",
+      "pepper",
+      "paprika",
+      "bread"
+    ],
+    "instructions": "Chop the onion and pepper; mince the garlic; roughly chop or crush the tomatoes. Heat oil in a skillet over medium heat. Cook onion and pepper until soft, about 6 minutes. Add garlic and paprika; cook 30 seconds. Stir in tomatoes and simmer 8–10 minutes into a thick sauce. Make small wells in the sauce and crack in the eggs. Cover and cook until whites are set but yolks stay soft. Season with salt and pepper. Serve with warm bread for scooping.",
+    "image": "https://www.themealdb.com/images/media/meals/g373701551450225.jpg",
+    "steps": [
+      "Chop the onion and pepper; mince the garlic; roughly chop or crush the tomatoes.",
+      "Heat oil in a skillet over medium heat. Cook onion and pepper until soft, about 6 minutes.",
+      "Add garlic and paprika; cook 30 seconds. Stir in tomatoes and simmer 8–10 minutes into a thick sauce.",
+      "Make small wells in the sauce and crack in the eggs. Cover and cook until whites are set but yolks stay soft.",
+      "Season with salt and pepper. Serve with warm bread for scooping."
+    ],
+    "calories": 310,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=shakshuka+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "egg",
+        "amount": "3 large"
+      },
+      {
+        "ingredient": "tomato",
+        "amount": "2 medium (250 g), diced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "pepper",
+        "amount": "1 bell pepper, sliced"
+      },
+      {
+        "ingredient": "paprika",
+        "amount": "1 tsp"
+      },
+      {
+        "ingredient": "bread",
+        "amount": "4 slices"
+      }
+    ]
+  },
+  {
+    "id": "r5",
+    "name": "Chicken Stir Fry",
+    "cuisine": "Asian",
+    "time_min": 25,
+    "ingredients": [
+      "chicken",
+      "broccoli",
+      "carrot",
+      "garlic",
+      "ginger",
+      "soy sauce",
+      "rice"
+    ],
+    "instructions": "Cut chicken into bite-size strips. Slice carrot and cut broccoli into florets; mince garlic and ginger. Heat oil in a wok over high heat. Stir-fry chicken until lightly browned and nearly cooked through; remove. Stir-fry broccoli and carrot 2–3 minutes, then add garlic and ginger for 30 seconds. Return chicken, add soy sauce and a splash of water. Toss until coated and chicken is cooked. Serve hot over steamed or leftover rice.",
+    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Cut chicken into bite-size strips. Slice carrot and cut broccoli into florets; mince garlic and ginger.",
+      "Heat oil in a wok over high heat. Stir-fry chicken until lightly browned and nearly cooked through; remove.",
+      "Stir-fry broccoli and carrot 2–3 minutes, then add garlic and ginger for 30 seconds.",
+      "Return chicken, add soy sauce and a splash of water. Toss until coated and chicken is cooked.",
+      "Serve hot over steamed or leftover rice."
+    ],
+    "calories": 480,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=chicken+stir+fry+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "chicken",
+        "amount": "300 g boneless, cut into strips"
+      },
+      {
+        "ingredient": "broccoli",
+        "amount": "200 g (1 small head), cut into florets"
+      },
+      {
+        "ingredient": "carrot",
+        "amount": "1 medium (100 g), diced"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "ginger",
+        "amount": "1 tbsp (2 cm piece), grated"
+      },
+      {
+        "ingredient": "soy sauce",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "rice",
+        "amount": "300 g cooked (about 150 g dry)"
+      }
+    ]
+  },
+  {
+    "id": "r6",
+    "name": "Potato Omelette",
+    "cuisine": "Spanish",
+    "time_min": 30,
+    "ingredients": [
+      "egg",
+      "potato",
+      "onion",
+      "olive oil"
+    ],
+    "instructions": "Peel and thinly slice the potato. Thinly slice the onion. Beat the eggs with a pinch of salt. Heat olive oil in a nonstick pan over medium heat. Gently cook potato and onion until soft but not browned, 10–12 minutes. Drain excess oil if needed, then mix the warm potato and onion into the beaten eggs. Return a little oil to the pan, pour in the mixture, and cook on low until the bottom is set. Flip carefully (or finish under a broiler) until cooked through. Rest 2 minutes, slice, and serve.",
+    "image": "https://images.unsplash.com/photo-1608030609295-a3c9e1f1c0f0?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Peel and thinly slice the potato. Thinly slice the onion. Beat the eggs with a pinch of salt.",
+      "Heat olive oil in a nonstick pan over medium heat. Gently cook potato and onion until soft but not browned, 10–12 minutes.",
+      "Drain excess oil if needed, then mix the warm potato and onion into the beaten eggs.",
+      "Return a little oil to the pan, pour in the mixture, and cook on low until the bottom is set.",
+      "Flip carefully (or finish under a broiler) until cooked through. Rest 2 minutes, slice, and serve."
+    ],
+    "calories": 390,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=spanish+potato+omelette+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "egg",
+        "amount": "5 large"
+      },
+      {
+        "ingredient": "potato",
+        "amount": "3 medium (400 g), thinly sliced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "olive oil",
+        "amount": "2 tbsp"
+      }
+    ]
+  },
+  {
+    "id": "r7",
+    "name": "Mushroom Risotto",
+    "cuisine": "Italian",
+    "time_min": 40,
+    "ingredients": [
+      "rice",
+      "mushroom",
+      "onion",
+      "garlic",
+      "butter",
+      "cheese"
+    ],
+    "instructions": "Slice the mushrooms and finely chop the onion and garlic. Melt half the butter in a pot. Sauté mushrooms until browned; remove and set aside. In the same pot, soften onion in remaining butter, add garlic, then stir in the rice to toast for 1–2 minutes. Add warm broth or water one ladle at a time, stirring often, until rice is creamy and just tender (about 18–20 minutes). Stir back the mushrooms and grated cheese. Season and serve immediately.",
+    "image": "https://images.unsplash.com/photo-1476124369491-e7addf5db371?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Slice the mushrooms and finely chop the onion and garlic.",
+      "Melt half the butter in a pot. Sauté mushrooms until browned; remove and set aside.",
+      "In the same pot, soften onion in remaining butter, add garlic, then stir in the rice to toast for 1–2 minutes.",
+      "Add warm broth or water one ladle at a time, stirring often, until rice is creamy and just tender (about 18–20 minutes).",
+      "Stir back the mushrooms and grated cheese. Season and serve immediately."
+    ],
+    "calories": 520,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=mushroom+risotto+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "rice",
+        "amount": "180 g arborio rice, dry"
+      },
+      {
+        "ingredient": "mushroom",
+        "amount": "200 g, sliced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "butter",
+        "amount": "20 g (1.5 tbsp)"
+      },
+      {
+        "ingredient": "cheese",
+        "amount": "60 g (1/2 cup), grated"
+      }
+    ]
+  },
+  {
+    "id": "r8",
+    "name": "Lentil Soup",
+    "cuisine": "Mediterranean",
+    "time_min": 40,
+    "ingredients": [
+      "lentils",
+      "carrot",
+      "onion",
+      "garlic",
+      "tomato",
+      "cumin"
+    ],
+    "instructions": "Rinse the lentils. Dice carrot, onion, and tomato; mince garlic. Heat oil in a pot. Soften onion and carrot for 5 minutes, then add garlic and cumin for 30 seconds. Add tomato and cook 2–3 minutes. Stir in lentils and cover with water or stock by about 5 cm. Simmer gently 25–30 minutes until lentils are soft, adding water if it gets too thick. Season to taste and serve with a drizzle of oil if you like.",
+    "image": "https://images.unsplash.com/photo-1547592166-23acba13311d?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Rinse the lentils. Dice carrot, onion, and tomato; mince garlic.",
+      "Heat oil in a pot. Soften onion and carrot for 5 minutes, then add garlic and cumin for 30 seconds.",
+      "Add tomato and cook 2–3 minutes. Stir in lentils and cover with water or stock by about 5 cm.",
+      "Simmer gently 25–30 minutes until lentils are soft, adding water if it gets too thick.",
+      "Season to taste and serve with a drizzle of oil if you like."
+    ],
+    "calories": 280,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=lentil+soup+recipe",
+    "diet": "vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "lentils",
+        "amount": "150 g (3/4 cup), dry"
+      },
+      {
+        "ingredient": "carrot",
+        "amount": "1 medium (100 g), diced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "tomato",
+        "amount": "2 medium (250 g), diced"
+      },
+      {
+        "ingredient": "cumin",
+        "amount": "1 tsp, ground"
+      }
+    ]
+  },
+  {
+    "id": "r9",
+    "name": "Avocado Toast with Egg",
+    "cuisine": "Modern",
+    "time_min": 10,
+    "ingredients": [
+      "bread",
+      "avocado",
+      "egg",
+      "lemon",
+      "pepper"
+    ],
+    "instructions": "Toast the bread until golden and crisp. Halve the avocado, scoop into a bowl, and mash with lemon juice, salt, and pepper. Cook the egg as you prefer — fried sunny-side up or gently poached. Spread avocado thickly on the toast, top with the egg, and finish with more black pepper. Serve right away while the toast is warm.",
+    "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Toast the bread until golden and crisp.",
+      "Halve the avocado, scoop into a bowl, and mash with lemon juice, salt, and pepper.",
+      "Cook the egg as you prefer — fried sunny-side up or gently poached.",
+      "Spread avocado thickly on the toast, top with the egg, and finish with more black pepper.",
+      "Serve right away while the toast is warm."
+    ],
+    "calories": 340,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=avocado+toast+with+egg+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "bread",
+        "amount": "2 slices"
+      },
+      {
+        "ingredient": "avocado",
+        "amount": "1 ripe, halved"
+      },
+      {
+        "ingredient": "egg",
+        "amount": "2 large"
+      },
+      {
+        "ingredient": "lemon",
+        "amount": "1, juice and zest"
+      },
+      {
+        "ingredient": "pepper",
+        "amount": "1 bell pepper, sliced"
+      }
+    ]
+  },
+  {
+    "id": "r10",
+    "name": "Banana Pancakes",
+    "cuisine": "Breakfast",
+    "time_min": 20,
+    "ingredients": [
+      "banana",
+      "egg",
+      "flour",
+      "milk",
+      "butter",
+      "honey"
+    ],
+    "instructions": "Mash the banana in a bowl until mostly smooth. Whisk in the eggs, then stir in flour and milk to a thick pancake batter. Rest 2 minutes. Heat a little butter in a nonstick pan over medium heat. Scoop batter into small pancakes; cook 2–3 minutes per side until golden and set. Stack and drizzle with honey. Serve warm.",
+    "image": "https://www.themealdb.com/images/media/meals/sywswr1511383814.jpg",
+    "steps": [
+      "Mash the banana in a bowl until mostly smooth.",
+      "Whisk in the eggs, then stir in flour and milk to a thick pancake batter. Rest 2 minutes.",
+      "Heat a little butter in a nonstick pan over medium heat.",
+      "Scoop batter into small pancakes; cook 2–3 minutes per side until golden and set.",
+      "Stack and drizzle with honey. Serve warm."
+    ],
+    "calories": 360,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=banana+pancakes+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "banana",
+        "amount": "2 ripe, mashed"
+      },
+      {
+        "ingredient": "egg",
+        "amount": "2 large"
+      },
+      {
+        "ingredient": "flour",
+        "amount": "150 g (1 1/4 cups)"
+      },
+      {
+        "ingredient": "milk",
+        "amount": "150 ml"
+      },
+      {
+        "ingredient": "butter",
+        "amount": "20 g (1.5 tbsp)"
+      },
+      {
+        "ingredient": "honey",
+        "amount": "1 tbsp"
+      }
+    ]
+  },
+  {
+    "id": "r11",
+    "name": "Caprese Salad",
+    "cuisine": "Italian",
+    "time_min": 10,
+    "ingredients": [
+      "tomato",
+      "cheese",
+      "basil",
+      "olive oil"
+    ],
+    "instructions": "Slice the tomatoes and cheese into even rounds. Arrange alternating slices of tomato and cheese on a plate. Tear fresh basil leaves over the top. Drizzle generously with olive oil and sprinkle with salt and black pepper. Serve immediately as a salad or light meal.",
+    "image": "https://images.unsplash.com/photo-1572449043416-55f4685c9bb7?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Slice the tomatoes and cheese into even rounds.",
+      "Arrange alternating slices of tomato and cheese on a plate.",
+      "Tear fresh basil leaves over the top.",
+      "Drizzle generously with olive oil and sprinkle with salt and black pepper.",
+      "Serve immediately as a salad or light meal."
+    ],
+    "calories": 290,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=caprese+salad+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "tomato",
+        "amount": "3 medium (350 g), sliced"
+      },
+      {
+        "ingredient": "cheese",
+        "amount": "125 g fresh mozzarella, sliced"
+      },
+      {
+        "ingredient": "basil",
+        "amount": "10 g (a small handful), torn"
+      },
+      {
+        "ingredient": "olive oil",
+        "amount": "2 tbsp"
+      }
+    ]
+  },
+  {
+    "id": "r12",
+    "name": "Vegetable Soup",
+    "cuisine": "Home-style",
+    "time_min": 35,
+    "ingredients": [
+      "carrot",
+      "potato",
+      "onion",
+      "celery",
+      "garlic",
+      "cabbage",
+      "tomato"
+    ],
+    "instructions": "Dice carrot, potato, onion, celery, cabbage, and tomato; mince garlic. Heat oil in a pot. Soften onion, celery, and garlic for 4–5 minutes. Add carrot, potato, cabbage, and tomato. Stir for 2 minutes. Cover with water or stock, bring to a boil, then simmer 20–25 minutes until vegetables are tender. Season with salt and pepper. Mash a few potato pieces for body if you like, then serve.",
+    "image": "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Dice carrot, potato, onion, celery, cabbage, and tomato; mince garlic.",
+      "Heat oil in a pot. Soften onion, celery, and garlic for 4–5 minutes.",
+      "Add carrot, potato, cabbage, and tomato. Stir for 2 minutes.",
+      "Cover with water or stock, bring to a boil, then simmer 20–25 minutes until vegetables are tender.",
+      "Season with salt and pepper. Mash a few potato pieces for body if you like, then serve."
+    ],
+    "calories": 220,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=vegetable+soup+recipe",
+    "diet": "vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "carrot",
+        "amount": "1 medium (100 g), diced"
+      },
+      {
+        "ingredient": "potato",
+        "amount": "2 medium (300 g), diced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "celery",
+        "amount": "2 stalks, sliced"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "cabbage",
+        "amount": "250 g (1/4 head), shredded"
+      },
+      {
+        "ingredient": "tomato",
+        "amount": "2 medium (250 g), diced"
+      }
+    ]
+  },
+  {
+    "id": "r13",
+    "name": "Tofu Veggie Bowl",
+    "cuisine": "Asian",
+    "time_min": 25,
+    "ingredients": [
+      "tofu",
+      "rice",
+      "broccoli",
+      "carrot",
+      "soy sauce",
+      "garlic",
+      "ginger"
+    ],
+    "instructions": "Press tofu if needed, then cut into cubes. Slice carrot; cut broccoli into florets; mince garlic and ginger. Cook rice (or reheat leftover rice) and keep warm. Pan-fry tofu in a little oil until golden on most sides; remove. Stir-fry broccoli and carrot, then add garlic, ginger, and soy sauce with a splash of water. Return tofu, toss to coat, and serve over rice.",
+    "image": "https://www.themealdb.com/images/media/meals/1525874812.jpg",
+    "steps": [
+      "Press tofu if needed, then cut into cubes. Slice carrot; cut broccoli into florets; mince garlic and ginger.",
+      "Cook rice (or reheat leftover rice) and keep warm.",
+      "Pan-fry tofu in a little oil until golden on most sides; remove.",
+      "Stir-fry broccoli and carrot, then add garlic, ginger, and soy sauce with a splash of water.",
+      "Return tofu, toss to coat, and serve over rice."
+    ],
+    "calories": 410,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=tofu+veggie+bowl+recipe",
+    "diet": "vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "tofu",
+        "amount": "250 g firm, cubed"
+      },
+      {
+        "ingredient": "rice",
+        "amount": "300 g cooked (about 150 g dry)"
+      },
+      {
+        "ingredient": "broccoli",
+        "amount": "200 g (1 small head), cut into florets"
+      },
+      {
+        "ingredient": "carrot",
+        "amount": "1 medium (100 g), diced"
+      },
+      {
+        "ingredient": "soy sauce",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "ginger",
+        "amount": "1 tbsp (2 cm piece), grated"
+      }
+    ]
+  },
+  {
+    "id": "r14",
+    "name": "Fish Tacos",
+    "cuisine": "Mexican",
+    "time_min": 30,
+    "ingredients": [
+      "fish",
+      "tortilla",
+      "cabbage",
+      "lime",
+      "onion",
+      "yogurt",
+      "cilantro"
+    ],
+    "instructions": "Pat fish dry and season with salt, pepper, and lime zest or juice. Cook fish in a lightly oiled pan until opaque and flaky; flake into pieces. Shred cabbage and thinly slice onion. Mix yogurt with lime juice for a quick sauce. Warm the tortillas in a dry pan until soft and pliable. Fill tortillas with fish, cabbage, onion, sauce, and cilantro. Squeeze lime over and serve.",
+    "image": "https://www.themealdb.com/images/media/meals/uvuyxu1503067369.jpg",
+    "steps": [
+      "Pat fish dry and season with salt, pepper, and lime zest or juice.",
+      "Cook fish in a lightly oiled pan until opaque and flaky; flake into pieces.",
+      "Shred cabbage and thinly slice onion. Mix yogurt with lime juice for a quick sauce.",
+      "Warm the tortillas in a dry pan until soft and pliable.",
+      "Fill tortillas with fish, cabbage, onion, sauce, and cilantro. Squeeze lime over and serve."
+    ],
+    "calories": 430,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=fish+tacos+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "fish",
+        "amount": "300 g white fish fillets"
+      },
+      {
+        "ingredient": "tortilla",
+        "amount": "4 medium"
+      },
+      {
+        "ingredient": "cabbage",
+        "amount": "250 g (1/4 head), shredded"
+      },
+      {
+        "ingredient": "lime",
+        "amount": "1, juiced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "yogurt",
+        "amount": "300 g (1 1/4 cups)"
+      },
+      {
+        "ingredient": "cilantro",
+        "amount": "10 g (a small handful), chopped"
+      }
+    ]
+  },
+  {
+    "id": "r15",
+    "name": "Beef Stir Fry Noodles",
+    "cuisine": "Asian",
+    "time_min": 30,
+    "ingredients": [
+      "beef",
+      "noodles",
+      "pepper",
+      "onion",
+      "garlic",
+      "soy sauce",
+      "ginger"
+    ],
+    "instructions": "Cook noodles according to package directions; drain and toss with a little oil. Slice beef thinly against the grain. Slice pepper and onion; mince garlic and ginger. Stir-fry beef over high heat until just browned; remove. Stir-fry pepper and onion, then add garlic and ginger. Return beef with soy sauce. Add noodles, toss until coated and hot, and serve immediately.",
+    "image": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Cook noodles according to package directions; drain and toss with a little oil.",
+      "Slice beef thinly against the grain. Slice pepper and onion; mince garlic and ginger.",
+      "Stir-fry beef over high heat until just browned; remove.",
+      "Stir-fry pepper and onion, then add garlic and ginger. Return beef with soy sauce.",
+      "Add noodles, toss until coated and hot, and serve immediately."
+    ],
+    "calories": 560,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=beef+stir+fry+noodles+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "beef",
+        "amount": "250 g, thinly sliced"
+      },
+      {
+        "ingredient": "noodles",
+        "amount": "200 g dry"
+      },
+      {
+        "ingredient": "pepper",
+        "amount": "1 bell pepper, sliced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "soy sauce",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "ginger",
+        "amount": "1 tbsp (2 cm piece), grated"
+      }
+    ]
+  },
+  {
+    "id": "r16",
+    "name": "Greek Yogurt Parfait",
+    "cuisine": "Breakfast",
+    "time_min": 5,
+    "ingredients": [
+      "yogurt",
+      "berries",
+      "honey",
+      "almonds"
+    ],
+    "instructions": "Spoon a layer of yogurt into a glass or bowl. Add a layer of berries (fresh or thawed). Repeat with another layer of yogurt and berries if desired. Drizzle honey over the top. Finish with chopped almonds and serve chilled.",
+    "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Spoon a layer of yogurt into a glass or bowl.",
+      "Add a layer of berries (fresh or thawed).",
+      "Repeat with another layer of yogurt and berries if desired.",
+      "Drizzle honey over the top.",
+      "Finish with chopped almonds and serve chilled."
+    ],
+    "calories": 260,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=greek+yogurt+parfait+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "yogurt",
+        "amount": "400 g Greek yogurt"
+      },
+      {
+        "ingredient": "berries",
+        "amount": "150 g (1 cup), fresh or frozen"
+      },
+      {
+        "ingredient": "honey",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "almonds",
+        "amount": "30 g (1/4 cup), sliced"
+      }
+    ]
+  },
+  {
+    "id": "r17",
+    "name": "Stuffed Peppers",
+    "cuisine": "Mediterranean",
+    "time_min": 45,
+    "ingredients": [
+      "pepper",
+      "rice",
+      "onion",
+      "tomato",
+      "garlic",
+      "cheese"
+    ],
+    "instructions": "Heat oven to 190°C / 375°F. Halve peppers and remove seeds. Cook rice if needed. Finely chop onion, garlic, and tomato. Sauté onion and garlic, stir in tomato and cooked rice, season well. Fill pepper halves with the rice mixture and place in a baking dish with a splash of water. Bake 25–30 minutes, top with cheese for the last 5 minutes until melted, then serve.",
+    "image": "https://www.themealdb.com/images/media/meals/w0rsga1782683912.jpg",
+    "steps": [
+      "Heat oven to 190°C / 375°F. Halve peppers and remove seeds.",
+      "Cook rice if needed. Finely chop onion, garlic, and tomato.",
+      "Sauté onion and garlic, stir in tomato and cooked rice, season well.",
+      "Fill pepper halves with the rice mixture and place in a baking dish with a splash of water.",
+      "Bake 25–30 minutes, top with cheese for the last 5 minutes until melted, then serve."
+    ],
+    "calories": 440,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=stuffed+peppers+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "pepper",
+        "amount": "4 large bell peppers, tops cut and seeded"
+      },
+      {
+        "ingredient": "rice",
+        "amount": "300 g cooked (about 150 g dry)"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "tomato",
+        "amount": "2 medium (250 g), diced"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "cheese",
+        "amount": "60 g (1/2 cup), grated"
+      }
+    ]
+  },
+  {
+    "id": "r18",
+    "name": "Zucchini Fritters",
+    "cuisine": "Mediterranean",
+    "time_min": 25,
+    "ingredients": [
+      "zucchini",
+      "egg",
+      "flour",
+      "onion",
+      "garlic",
+      "yogurt"
+    ],
+    "instructions": "Grate the zucchini, toss with a pinch of salt, and squeeze out excess liquid after 5 minutes. Finely chop onion and garlic. Mix zucchini with egg, flour, onion, and garlic into a thick batter. Heat oil in a pan over medium heat. Drop spoonfuls of batter and flatten slightly. Fry 3–4 minutes per side until golden and cooked through. Drain on paper towel and serve with a spoonful of yogurt.",
+    "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Grate the zucchini, toss with a pinch of salt, and squeeze out excess liquid after 5 minutes.",
+      "Finely chop onion and garlic. Mix zucchini with egg, flour, onion, and garlic into a thick batter.",
+      "Heat oil in a pan over medium heat. Drop spoonfuls of batter and flatten slightly.",
+      "Fry 3–4 minutes per side until golden and cooked through.",
+      "Drain on paper towel and serve with a spoonful of yogurt."
+    ],
+    "calories": 320,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=zucchini+fritters+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "zucchini",
+        "amount": "2 medium (350 g), grated"
+      },
+      {
+        "ingredient": "egg",
+        "amount": "2 large"
+      },
+      {
+        "ingredient": "flour",
+        "amount": "60 g (1/2 cup)"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "yogurt",
+        "amount": "300 g (1 1/4 cups)"
+      }
+    ]
+  },
+  {
+    "id": "r19",
+    "name": "Peanut Noodle Salad",
+    "cuisine": "Asian",
+    "time_min": 20,
+    "ingredients": [
+      "noodles",
+      "peanut",
+      "carrot",
+      "cucumber",
+      "soy sauce",
+      "garlic",
+      "lime"
+    ],
+    "instructions": "Cook noodles, rinse under cool water, and drain well. Crush or finely chop peanuts. Shred carrot and cucumber into thin strips; mince garlic. Whisk soy sauce, garlic, lime juice, and crushed peanut into a sauce (add a splash of water if thick). Toss noodles with the sauce, carrot, and cucumber until evenly coated. Top with extra peanut and serve cool or room temperature.",
+    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Cook noodles, rinse under cool water, and drain well.",
+      "Crush or finely chop peanuts. Shred carrot and cucumber into thin strips; mince garlic.",
+      "Whisk soy sauce, garlic, lime juice, and crushed peanut into a sauce (add a splash of water if thick).",
+      "Toss noodles with the sauce, carrot, and cucumber until evenly coated.",
+      "Top with extra peanut and serve cool or room temperature."
+    ],
+    "calories": 470,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=peanut+noodle+salad+recipe",
+    "diet": "vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "noodles",
+        "amount": "200 g dry"
+      },
+      {
+        "ingredient": "peanut",
+        "amount": "3 tbsp peanut butter (or 40 g peanuts)"
+      },
+      {
+        "ingredient": "carrot",
+        "amount": "1 medium (100 g), diced"
+      },
+      {
+        "ingredient": "cucumber",
+        "amount": "1 small, diced"
+      },
+      {
+        "ingredient": "soy sauce",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "lime",
+        "amount": "1, juiced"
+      }
+    ]
+  },
+  {
+    "id": "r20",
+    "name": "Apple Cinnamon Toast",
+    "cuisine": "Breakfast",
+    "time_min": 15,
+    "ingredients": [
+      "apple",
+      "bread",
+      "butter",
+      "honey",
+      "sugar"
+    ],
+    "instructions": "Core and thinly slice the apple. Melt butter in a pan over medium heat. Add apple and a pinch of sugar; cook until soft and lightly caramelized. Toast the bread until golden. Spoon the warm apples over the toast. Drizzle with honey and serve immediately.",
+    "image": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Core and thinly slice the apple.",
+      "Melt butter in a pan over medium heat. Add apple and a pinch of sugar; cook until soft and lightly caramelized.",
+      "Toast the bread until golden.",
+      "Spoon the warm apples over the toast.",
+      "Drizzle with honey and serve immediately."
+    ],
+    "calories": 300,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=apple+cinnamon+toast+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "apple",
+        "amount": "1 large, thinly sliced"
+      },
+      {
+        "ingredient": "bread",
+        "amount": "2 thick slices"
+      },
+      {
+        "ingredient": "butter",
+        "amount": "20 g (1.5 tbsp)"
+      },
+      {
+        "ingredient": "honey",
+        "amount": "1 tbsp"
+      },
+      {
+        "ingredient": "sugar",
+        "amount": "1 tsp with 1/2 tsp cinnamon"
+      }
+    ]
+  },
+  {
+    "id": "r21",
+    "name": "Salmon with Lemon Greens",
+    "cuisine": "Healthy",
+    "time_min": 25,
+    "ingredients": [
+      "salmon",
+      "lemon",
+      "spinach",
+      "garlic",
+      "olive oil"
+    ],
+    "instructions": "Pat salmon dry and season with salt and pepper. Heat olive oil in a skillet over medium-high heat. Sear salmon skin-side down first if present, then flip until just cooked. Remove salmon. In the same pan, add a little more oil and minced garlic for 20 seconds. Add spinach and wilt quickly, then finish with lemon juice. Plate greens beside or under the salmon and serve with lemon wedges.",
+    "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Pat salmon dry and season with salt and pepper.",
+      "Heat olive oil in a skillet over medium-high heat. Sear salmon skin-side down first if present, then flip until just cooked.",
+      "Remove salmon. In the same pan, add a little more oil and minced garlic for 20 seconds.",
+      "Add spinach and wilt quickly, then finish with lemon juice.",
+      "Plate greens beside or under the salmon and serve with lemon wedges."
+    ],
+    "calories": 450,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=salmon+spinach+lemon+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "salmon",
+        "amount": "2 fillets (300 g total)"
+      },
+      {
+        "ingredient": "lemon",
+        "amount": "1, juice and zest"
+      },
+      {
+        "ingredient": "spinach",
+        "amount": "100 g (2 large handfuls)"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "olive oil",
+        "amount": "2 tbsp"
+      }
+    ]
+  },
+  {
+    "id": "r22",
+    "name": "Bean Chili",
+    "cuisine": "American",
+    "time_min": 40,
+    "ingredients": [
+      "beans",
+      "tomato",
+      "onion",
+      "garlic",
+      "pepper",
+      "cumin",
+      "chili"
+    ],
+    "instructions": "Dice onion, garlic, pepper, tomato, and chili. Heat oil in a pot. Soften onion and pepper, then add garlic, chili, and cumin for 1 minute. Stir in tomato and cook until saucy. Add beans with a little of their liquid (or water). Simmer 20–25 minutes, stirring occasionally. Season well and serve thick and hearty, alone or with bread/rice.",
+    "image": "https://images.unsplash.com/photo-1455619452474-d2be8b1e70cd?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Dice onion, garlic, pepper, tomato, and chili.",
+      "Heat oil in a pot. Soften onion and pepper, then add garlic, chili, and cumin for 1 minute.",
+      "Stir in tomato and cook until saucy.",
+      "Add beans with a little of their liquid (or water). Simmer 20–25 minutes, stirring occasionally.",
+      "Season well and serve thick and hearty, alone or with bread/rice."
+    ],
+    "calories": 350,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=bean+chili+recipe",
+    "diet": "vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "beans",
+        "amount": "2 cans (800 g), drained and rinsed"
+      },
+      {
+        "ingredient": "tomato",
+        "amount": "2 medium (250 g), diced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "pepper",
+        "amount": "1 bell pepper, sliced"
+      },
+      {
+        "ingredient": "cumin",
+        "amount": "1 tsp, ground"
+      },
+      {
+        "ingredient": "chili",
+        "amount": "1 small, finely chopped"
+      }
+    ]
+  },
+  {
+    "id": "r23",
+    "name": "Coconut Chicken Curry",
+    "cuisine": "Thai",
+    "time_min": 35,
+    "ingredients": [
+      "chicken",
+      "coconut milk",
+      "onion",
+      "garlic",
+      "ginger",
+      "pepper",
+      "rice"
+    ],
+    "instructions": "Cut chicken into bite-size pieces. Slice onion and pepper; mince garlic and ginger. Brown chicken in a little oil; remove. Soften onion in the same pot. Add garlic, ginger, and pepper; cook 1–2 minutes. Return chicken, pour in coconut milk, and simmer gently 12–15 minutes until chicken is cooked and sauce thickens. Season to taste and serve over rice.",
+    "image": "https://www.themealdb.com/images/media/meals/sstssx1487349585.jpg",
+    "steps": [
+      "Cut chicken into bite-size pieces. Slice onion and pepper; mince garlic and ginger.",
+      "Brown chicken in a little oil; remove. Soften onion in the same pot.",
+      "Add garlic, ginger, and pepper; cook 1–2 minutes.",
+      "Return chicken, pour in coconut milk, and simmer gently 12–15 minutes until chicken is cooked and sauce thickens.",
+      "Season to taste and serve over rice."
+    ],
+    "calories": 540,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=coconut+chicken+curry+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "chicken",
+        "amount": "300 g boneless, cut into strips"
+      },
+      {
+        "ingredient": "coconut milk",
+        "amount": "200 ml (about 1 cup)"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "ginger",
+        "amount": "1 tbsp (2 cm piece), grated"
+      },
+      {
+        "ingredient": "pepper",
+        "amount": "1 bell pepper, sliced"
+      },
+      {
+        "ingredient": "rice",
+        "amount": "300 g cooked (about 150 g dry)"
+      }
+    ]
+  },
+  {
+    "id": "r24",
+    "name": "Egg Fried Noodles",
+    "cuisine": "Asian",
+    "time_min": 15,
+    "ingredients": [
+      "noodles",
+      "egg",
+      "onion",
+      "garlic",
+      "soy sauce",
+      "carrot"
+    ],
+    "instructions": "If noodles are leftover and cold, loosen them with a splash of water. Dice onion and carrot; mince garlic. Beat the egg. Heat oil in a wok. Scramble the egg and set aside. Stir-fry onion, carrot, and garlic for 2 minutes. Add noodles and soy sauce; toss on high heat until hot. Return egg, toss again, and serve.",
+    "image": "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "If noodles are leftover and cold, loosen them with a splash of water. Dice onion and carrot; mince garlic. Beat the egg.",
+      "Heat oil in a wok. Scramble the egg and set aside.",
+      "Stir-fry onion, carrot, and garlic for 2 minutes.",
+      "Add noodles and soy sauce; toss on high heat until hot.",
+      "Return egg, toss again, and serve."
+    ],
+    "calories": 400,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=egg+fried+noodles+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "noodles",
+        "amount": "250 g cooked"
+      },
+      {
+        "ingredient": "egg",
+        "amount": "3 large"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "soy sauce",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "carrot",
+        "amount": "1 medium (100 g), diced"
+      }
+    ]
+  },
+  {
+    "id": "r25",
+    "name": "Mediterranean Couscous Bowl",
+    "cuisine": "Mediterranean",
+    "time_min": 20,
+    "ingredients": [
+      "rice",
+      "cucumber",
+      "tomato",
+      "onion",
+      "lemon",
+      "olive oil",
+      "parsley"
+    ],
+    "instructions": "Cook or reheat rice (or couscous-style grains) until fluffy; let cool slightly. Dice cucumber, tomato, and onion; chop parsley. Whisk lemon juice with olive oil, salt, and pepper for a dressing. Toss warm grains with vegetables, parsley, and dressing. Taste and adjust lemon/salt. Serve as a bowl or side.",
+    "image": "https://www.themealdb.com/images/media/meals/02s6gc1763799560.jpg",
+    "steps": [
+      "Cook or reheat rice (or couscous-style grains) until fluffy; let cool slightly.",
+      "Dice cucumber, tomato, and onion; chop parsley.",
+      "Whisk lemon juice with olive oil, salt, and pepper for a dressing.",
+      "Toss warm grains with vegetables, parsley, and dressing.",
+      "Taste and adjust lemon/salt. Serve as a bowl or side."
+    ],
+    "calories": 330,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=mediterranean+grain+bowl+recipe",
+    "diet": "vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "rice",
+        "amount": "300 g cooked (about 150 g dry)"
+      },
+      {
+        "ingredient": "cucumber",
+        "amount": "1 small, diced"
+      },
+      {
+        "ingredient": "tomato",
+        "amount": "2 medium (250 g), diced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "lemon",
+        "amount": "1, juice and zest"
+      },
+      {
+        "ingredient": "olive oil",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "parsley",
+        "amount": "10 g (a small handful), chopped"
+      }
+    ]
+  },
+  {
+    "id": "r26",
+    "name": "Pork & Cabbage Stir Fry",
+    "cuisine": "Asian",
+    "time_min": 25,
+    "ingredients": [
+      "pork",
+      "cabbage",
+      "garlic",
+      "ginger",
+      "soy sauce",
+      "onion"
+    ],
+    "instructions": "Slice pork thinly. Shred cabbage; slice onion; mince garlic and ginger. Stir-fry pork over high heat until browned; remove. Stir-fry onion and cabbage until wilted but still crisp. Add garlic and ginger, return pork, and splash in soy sauce. Toss well and serve hot.",
+    "image": "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Slice pork thinly. Shred cabbage; slice onion; mince garlic and ginger.",
+      "Stir-fry pork over high heat until browned; remove.",
+      "Stir-fry onion and cabbage until wilted but still crisp.",
+      "Add garlic and ginger, return pork, and splash in soy sauce.",
+      "Toss well and serve hot."
+    ],
+    "calories": 490,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=pork+cabbage+stir+fry+recipe",
+    "diet": "non-vegan",
+    "halal": "non-halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "pork",
+        "amount": "250 g, thinly sliced"
+      },
+      {
+        "ingredient": "cabbage",
+        "amount": "250 g (1/4 head), shredded"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "ginger",
+        "amount": "1 tbsp (2 cm piece), grated"
+      },
+      {
+        "ingredient": "soy sauce",
+        "amount": "2 tbsp"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      }
+    ]
+  },
+  {
+    "id": "r27",
+    "name": "Corn & Pepper Quesadillas",
+    "cuisine": "Mexican",
+    "time_min": 20,
+    "ingredients": [
+      "tortilla",
+      "cheese",
+      "corn",
+      "pepper",
+      "onion"
+    ],
+    "instructions": "Dice onion and pepper; drain corn if canned. Warm a tortilla in a dry pan, sprinkle cheese on half, then add corn, pepper, and onion. Top with more cheese and fold the tortilla over. Cook until both sides are golden and cheese is melted, pressing gently. Slice into wedges and serve.",
+    "image": "https://images.unsplash.com/photo-1618040996337-56904b7850b9?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Dice onion and pepper; drain corn if canned.",
+      "Warm a tortilla in a dry pan, sprinkle cheese on half, then add corn, pepper, and onion.",
+      "Top with more cheese and fold the tortilla over.",
+      "Cook until both sides are golden and cheese is melted, pressing gently.",
+      "Slice into wedges and serve."
+    ],
+    "calories": 410,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=corn+pepper+quesadilla+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "tortilla",
+        "amount": "4 medium"
+      },
+      {
+        "ingredient": "cheese",
+        "amount": "120 g (1 cup), grated"
+      },
+      {
+        "ingredient": "corn",
+        "amount": "150 g (1 cup) kernels"
+      },
+      {
+        "ingredient": "pepper",
+        "amount": "1 bell pepper, sliced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      }
+    ]
+  },
+  {
+    "id": "r28",
+    "name": "Creamy Mushroom Pasta",
+    "cuisine": "Italian",
+    "time_min": 30,
+    "ingredients": [
+      "pasta",
+      "mushroom",
+      "garlic",
+      "cream",
+      "onion",
+      "parsley"
+    ],
+    "instructions": "Cook pasta in salted water until al dente; reserve some pasta water and drain. Slice mushrooms; chop onion and garlic; chop parsley. Sauté onion in a pan until soft, add garlic and mushrooms, and cook until mushrooms release liquid and brown. Pour in cream and simmer 2–3 minutes. Add pasta and a splash of pasta water to loosen. Toss with parsley, season, and serve.",
+    "image": "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Cook pasta in salted water until al dente; reserve some pasta water and drain.",
+      "Slice mushrooms; chop onion and garlic; chop parsley.",
+      "Sauté onion in a pan until soft, add garlic and mushrooms, and cook until mushrooms release liquid and brown.",
+      "Pour in cream and simmer 2–3 minutes. Add pasta and a splash of pasta water to loosen.",
+      "Toss with parsley, season, and serve."
+    ],
+    "calories": 530,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=creamy+mushroom+pasta+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_gain",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "pasta",
+        "amount": "200 g dry"
+      },
+      {
+        "ingredient": "mushroom",
+        "amount": "200 g, sliced"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "cream",
+        "amount": "100 ml (1/2 cup)"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "parsley",
+        "amount": "10 g (a small handful), chopped"
+      }
+    ]
+  },
+  {
+    "id": "r29",
+    "name": "Shrimp Garlic Skillet",
+    "cuisine": "Coastal",
+    "time_min": 20,
+    "ingredients": [
+      "shrimp",
+      "garlic",
+      "lemon",
+      "butter",
+      "parsley",
+      "bread"
+    ],
+    "instructions": "Pat shrimp dry and season lightly. Mince garlic; chop parsley; cut lemon into wedges. Melt butter in a skillet over medium heat. Soften garlic for 20–30 seconds without browning. Add shrimp in a single layer and cook 1–2 minutes per side until pink and opaque. Squeeze lemon over the shrimp and sprinkle parsley. Serve immediately with bread to mop up the garlic butter.",
+    "image": "https://images.unsplash.com/photo-1559737558-2f5a35f5945e?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Pat shrimp dry and season lightly. Mince garlic; chop parsley; cut lemon into wedges.",
+      "Melt butter in a skillet over medium heat. Soften garlic for 20–30 seconds without browning.",
+      "Add shrimp in a single layer and cook 1–2 minutes per side until pink and opaque.",
+      "Squeeze lemon over the shrimp and sprinkle parsley.",
+      "Serve immediately with bread to mop up the garlic butter."
+    ],
+    "calories": 320,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=garlic+butter+shrimp+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "shrimp",
+        "amount": "250 g, peeled and deveined"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "lemon",
+        "amount": "1, juice and zest"
+      },
+      {
+        "ingredient": "butter",
+        "amount": "20 g (1.5 tbsp)"
+      },
+      {
+        "ingredient": "parsley",
+        "amount": "10 g (a small handful), chopped"
+      },
+      {
+        "ingredient": "bread",
+        "amount": "4 slices"
+      }
+    ]
+  },
+  {
+    "id": "r30",
+    "name": "Roasted Veggie Hash",
+    "cuisine": "Home-style",
+    "time_min": 35,
+    "ingredients": [
+      "potato",
+      "carrot",
+      "onion",
+      "pepper",
+      "egg",
+      "garlic",
+      "olive oil"
+    ],
+    "instructions": "Heat oven to 200°C / 400°F. Dice potato, carrot, onion, and pepper; mince garlic. Toss vegetables with olive oil, garlic, salt, and pepper on a baking sheet. Roast 25–30 minutes, stirring once, until edges are browned and potatoes are tender. Meanwhile, fry an egg sunny-side up or to your liking. Pile the roasted hash on a plate, top with the egg, and serve.",
+    "image": "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80",
+    "steps": [
+      "Heat oven to 200°C / 400°F. Dice potato, carrot, onion, and pepper; mince garlic.",
+      "Toss vegetables with olive oil, garlic, salt, and pepper on a baking sheet.",
+      "Roast 25–30 minutes, stirring once, until edges are browned and potatoes are tender.",
+      "Meanwhile, fry an egg sunny-side up or to your liking.",
+      "Pile the roasted hash on a plate, top with the egg, and serve."
+    ],
+    "calories": 380,
+    "calories_note": "per serving (estimate)",
+    "video_url": "https://www.youtube.com/results?search_query=roasted+vegetable+hash+egg+recipe",
+    "diet": "non-vegan",
+    "halal": "halal",
+    "goal": "weight_loss",
+    "servings": 2,
+    "measurements": [
+      {
+        "ingredient": "potato",
+        "amount": "3 medium (450 g), cubed"
+      },
+      {
+        "ingredient": "carrot",
+        "amount": "1 medium (100 g), diced"
+      },
+      {
+        "ingredient": "onion",
+        "amount": "1 medium, finely chopped"
+      },
+      {
+        "ingredient": "pepper",
+        "amount": "1 bell pepper, sliced"
+      },
+      {
+        "ingredient": "egg",
+        "amount": "3 large"
+      },
+      {
+        "ingredient": "garlic",
+        "amount": "3 cloves, minced"
+      },
+      {
+        "ingredient": "olive oil",
+        "amount": "2 tbsp"
+      }
+    ]
+  }
+]

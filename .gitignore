@@ -1,0 +1,16 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+dist/
+build/
+.DS_Store
+_extract/
+data/embeddings.json
+data/embeddings.npz
+data/recipe_index.json
+uploads/

@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Petugram — Cook leftovers, cut waste</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+</head>
+<body class="night">
+  <div class="night-sky" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="top" id="site-header">
+    <a class="brand" href="#pantry" data-panel="pantry" aria-label="Petugram home">Petugram</a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#pantry" class="nav-link active" data-panel="pantry">Fridge</a>
+      <a href="#matcher" class="nav-link" data-panel="matcher">Match</a>
+      <a href="#meal-plan" class="nav-link" data-panel="meal-plan">Plan</a>
+      <a href="#restaurants" class="nav-link" data-panel="restaurants">Discover</a>
+      <a href="#surplus" class="nav-link" data-panel="surplus">Share</a>
+      <a href="#posts" class="nav-link" data-panel="posts">Posts</a>
+      <a href="#messages" class="nav-link" data-panel="messages">Inbox <span id="msg-nav-badge" class="nav-badge" hidden>0</span></a>
+      <a href="#profile" class="nav-link" data-panel="profile">Profile</a>
+      <a href="#admin" class="nav-link admin-only" data-panel="admin" hidden>Admin</a>
+    </nav>
+    <div class="auth-bar" id="auth-bar">
+      <button type="button" id="fridge-alert-btn" class="fridge-alert-btn" hidden title="Fridge — expiry alerts" aria-label="Fridge expiry alerts">
+        <span class="auth-icon-glyph" aria-hidden="true">🧊</span>
+        <span class="auth-icon-label">Fridge</span>
+        <span id="fridge-alert-count" class="auth-icon-count" hidden>0</span>
+      </button>
+      <div class="notify-wrap" id="notify-wrap" hidden>
+        <button type="button" id="notify-btn" class="notify-btn" title="Notifications" aria-label="Notifications">
+          <span class="auth-icon-glyph" aria-hidden="true">🔔</span>
+          <span class="auth-icon-label">Alerts</span>
+          <span id="notify-count" class="notify-count" hidden>0</span>
+        </button>
+        <div id="notify-panel" class="notify-panel" hidden>
+          <div class="notify-panel-head">
+            <strong>Notifications</strong>
+            <button type="button" class="btn ghost notify-read-all" id="notify-read-all">Mark all read</button>
+          </div>
+          <div id="notify-list" class="notify-list"></div>
+        </div>
+      </div>
+      <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to day mode" title="Toggle day / night">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M21 14.3A8.5 8.5 0 0 1 9.7 3a7 7 0 1 0 11.3 11.3z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 4.5a1 1 0 0 1 1 1V7a1 1 0 1 1-2 0V5.5a1 1 0 0 1 1-1zm0 11a1 1 0 0 1 1 1V18a1 1 0 1 1-2 0v-1.5a1 1 0 0 1 1-1zm7.5-4.5a1 1 0 0 1-1 1H17a1 1 0 1 1 0-2h1.5a1 1 0 0 1 1 1zM8 12a1 1 0 0 1-1 1H5.5a1 1 0 1 1 0-2H7a1 1 0 0 1 1 1zm8.95-5.45a1 1 0 0 1 0 1.4l-1.06 1.06a1 1 0 1 1-1.42-1.42l1.07-1.06a1 1 0 0 1 1.41 0zM9.53 15.99a1 1 0 0 1 0 1.41l-1.06 1.07a1 1 0 1 1-1.42-1.42l1.07-1.06a1 1 0 0 1 1.41 0zm8.48 1.41a1 1 0 0 1-1.41 0l-1.06-1.07a1 1 0 1 1 1.41-1.41l1.06 1.06a1 1 0 0 1 0 1.42zM8.47 6.95a1 1 0 0 1-1.41 0L6 5.89A1 1 0 0 1 7.41 4.47l1.06 1.06a1 1 0 0 1 0 1.42zM12 8.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7z"/></svg>
+      </button>
+      <button type="button" id="auth-user" class="nav-user-btn" hidden title="Open profile" aria-label="Open your profile">
+        <span id="nav-user-avatar" class="nav-user-avatar" aria-hidden="true"></span>
+        <span id="nav-user-name" class="nav-user-name sr-only"></span>
+      </button>
+      <input type="file" id="story-upload-input" accept="image/jpeg,image/png,image/webp,image/gif,video/mp4,video/webm,video/quicktime,video/*" hidden />
+      <button type="button" id="logout-btn" class="btn ghost auth-btn" hidden>Log out</button>
+      <button type="button" id="login-open-btn" class="btn ghost auth-btn">Log in</button>
+    </div>
+  </header>
+
+  <dialog id="auth-dialog" class="auth-dialog">
+    <form id="auth-form" method="dialog" novalidate>
+      <h3 id="auth-title">Log in</h3>
+      <p id="auth-subtitle" class="muted auth-subtitle">Welcome back — cook what you have.</p>
+      <div class="auth-social" id="auth-social" hidden>
+        <div id="google-signin-btn" class="google-signin-btn"></div>
+        <button type="button" class="btn auth-facebook-btn" id="facebook-signin-btn" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M14 8h2.5V5.5H14c-1.9 0-3.5 1.6-3.5 3.5V11H8v3h2.5v6H14v-6h2.3l.5-3H14V9c0-.6.4-1 1-1z"/></svg>
+          Continue with Facebook
+        </button>
+        <p class="auth-divider"><span>or use username</span></p>
+      </div>
+      <label>Username
+        <input type="text" id="auth-username" autocomplete="username" required minlength="3" maxlength="24" pattern="[A-Za-z][A-Za-z0-9_]{2,23}" spellcheck="false" />
+        <small id="auth-username-hint" class="auth-hint">Letters, numbers, underscores · 3–24 chars</small>
+      </label>
+      <label>Password
+        <input type="password" id="auth-password" autocomplete="current-password" required minlength="6" maxlength="128" />
+        <small id="auth-password-hint" class="auth-hint">At least 8 characters with a letter and a number</small>
+      </label>
+      <label id="auth-confirm-wrap" hidden>Confirm password
+        <input type="password" id="auth-password-confirm" autocomplete="new-password" minlength="8" maxlength="128" />
+      </label>
+      <p id="auth-error" class="auth-error" hidden></p>
+      <div class="auth-actions">
+        <button type="submit" class="btn primary" id="auth-submit">Log in</button>
+        <button type="button" class="btn ghost" id="auth-toggle">Create account</button>
+        <button type="button" class="btn ghost" id="auth-close">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="delete-account-dialog" class="auth-dialog delete-dialog">
+    <form id="delete-account-form" method="dialog" novalidate>
+      <h3>Delete account</h3>
+      <p id="delete-account-warning" class="muted delete-warning">This permanently removes your profile, pantry, favorites, posts, and cooking history. Type your password below to confirm — this cannot be undone.</p>
+      <label id="delete-account-password-wrap">Confirm password<input type="password" id="delete-account-password" autocomplete="current-password" minlength="6" /></label>
+      <label id="delete-account-confirm-wrap" hidden>Type <strong id="delete-account-phrase">delete username</strong>
+        <input type="text" id="delete-account-confirm-text" autocomplete="off" />
+      </label>
+      <p id="delete-account-error" class="auth-error" hidden></p>
+      <div class="auth-actions">
+        <button type="submit" class="btn danger" id="delete-account-confirm">Delete my account</button>
+        <button type="button" class="btn ghost" id="delete-account-cancel">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <main>
+    <section class="hero" id="home-hero">
+      <div class="hero-copy">
+        <h1 class="brand-hero">Petugram</h1>
+        <p class="lede">Petugram is a zero-waste kitchen companion — a digital fridge that tracks expiry, an AI matcher that turns leftovers into recipes, a planner that builds your week, and a local sharing network so nothing good ever hits the bin.</p>
+        <div class="cta-row">
+          <a class="btn primary" id="hero-cta" href="#pantry" data-panel="pantry">Open fridge</a>
+        </div>
+      </div>
+      <div class="hero-photo" aria-hidden="true"></div>
+    </section>
+
+    <div class="panels">
+      <section id="matcher" class="panel matcher" hidden>
+        <h2>What’s in your fridge?</h2>
+        <p class="section-sub">Search recipes from ingredients you have — ranked with your tastes when you&apos;re signed in (cuisines, favorites, and what you cook).</p>
+        <p id="match-pref-banner" class="pref-banner" hidden></p>
+        <div id="mongo-banner" class="mongo-banner" hidden></div>
+
+        <form id="match-form" class="match-form">
+          <div class="fridge-panel" id="match-ingredient-card">
+            <div class="fridge-panel-head">
+              <h3>Fridge ingredients</h3>
+              <button
+                type="button"
+                class="btn ghost"
+                id="load-pantry-btn"
+                title="Pull ingredients from your Digital Fridge inventory (Fridge tab)"
+                aria-label="Load ingredients from your Digital Fridge inventory"
+              >Load from fridge</button>
+            </div>
+            <div class="fridge-add-row">
+              <label class="sr-only" for="ingredient-add">Add ingredient</label>
+              <input type="text" id="ingredient-add" placeholder="Add ingredient (e.g. tomato, egg)" autocomplete="off" />
+              <button type="button" class="btn ghost" id="ingredient-add-btn">Add</button>
+            </div>
+            <p class="fridge-or-divider" role="separator" aria-hidden="true"><span>or describe what you have</span></p>
+            <label class="sr-only" for="ingredients">Leftover ingredients or dish name</label>
+            <textarea
+              id="ingredients"
+              name="ingredients"
+              rows="3"
+              placeholder="e.g. tomato, egg, onion — or a dish name like Shakshuka"
+              required
+            ></textarea>
+            <div id="ingredient-pills" class="ingredient-pills" aria-live="polite" hidden></div>
+          </div>
+
+          <fieldset class="prefs search-filters">
+            <legend>Filter recipes</legend>
+            <div class="filter-grid">
+              <label>Cuisine
+                <select id="filter-cuisine" name="cuisine">
+                  <option value="">Any cuisine</option>
+                  <option value="American">American</option>
+                  <option value="Asian">Asian</option>
+                  <option value="Breakfast">Breakfast</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="Coastal">Coastal</option>
+                  <option value="French">French</option>
+                  <option value="Healthy">Healthy</option>
+                  <option value="Home-style">Home-style</option>
+                  <option value="Indian">Indian</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Mediterranean">Mediterranean</option>
+                  <option value="Mexican">Mexican</option>
+                  <option value="Middle Eastern">Middle Eastern</option>
+                  <option value="Modern">Modern</option>
+                  <option value="Pakistani">Pakistani</option>
+                  <option value="Spanish">Spanish</option>
+                  <option value="Thai">Thai</option>
+                  <option value="Turkish">Turkish</option>
+                </select>
+              </label>
+              <label>Max cooking time
+                <select id="filter-time" name="max_time_min">
+                  <option value="">Any time</option>
+                  <option value="20">≤ 20 min</option>
+                  <option value="30">≤ 30 min</option>
+                  <option value="45">≤ 45 min</option>
+                  <option value="60">≤ 60 min</option>
+                </select>
+              </label>
+              <label>Difficulty
+                <select id="filter-difficulty" name="difficulty">
+                  <option value="">Any level</option>
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </label>
+              <label>Diet
+                <select id="filter-diet" name="diet">
+                  <option value="">Any</option>
+                  <option value="vegan">Vegan</option>
+                  <option value="non-vegan">Non-vegan</option>
+                </select>
+              </label>
+              <label>Max calories
+                <select id="filter-calories" name="max_calories">
+                  <option value="">Any calories</option>
+                  <option value="300">≤ 300 kcal</option>
+                  <option value="400">≤ 400 kcal</option>
+                  <option value="500">≤ 500 kcal</option>
+                  <option value="600">≤ 600 kcal</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+          <button type="submit" class="btn primary" id="submit-btn">Find recipes</button>
+        </form>
+        <p id="status" class="status" hidden></p>
+        <div id="summary" class="summary" hidden></div>
+        <div id="nutrition-dashboard" class="nutrition-dashboard" hidden></div>
+        <div id="results" class="results"></div>
+      </section>
+
+      <dialog id="recipe-ingredients-dialog" class="ingredients-dialog">
+        <div class="ingredients-dialog-inner">
+          <header class="ingredients-dialog-head">
+            <div>
+              <p class="ingredients-dialog-kicker">Recipe ingredients</p>
+              <h3 id="recipe-ingredients-title">Ingredients</h3>
+            </div>
+            <button type="button" class="btn ghost" id="recipe-ingredients-close" aria-label="Close">Close</button>
+          </header>
+          <div id="recipe-ingredients-body" class="ingredients-dialog-body"></div>
+        </div>
+      </dialog>
+
+      <section id="meal-plan" class="panel meal-plan-panel" hidden>
+        <h2>Meal plan</h2>
+        <p class="section-sub">Build a 3–7 day plan with breakfast, lunch, dinner, and snacks from fridge leftovers — personalized from what you cook, save, and like.</p>
+        <p id="plan-pref-banner" class="pref-banner" hidden></p>
+        <div class="meal-plan-controls">
+          <div class="meal-plan-days" role="group" aria-label="Plan length">
+            <span class="meal-plan-days-label">Days</span>
+            <button type="button" class="meal-plan-day-btn active" data-days="3">3</button>
+            <button type="button" class="meal-plan-day-btn" data-days="5">5</button>
+            <button type="button" class="meal-plan-day-btn" data-days="7">7</button>
+          </div>
+          <div class="meal-plan-filters filter-grid">
+            <label>Cuisine
+              <select id="plan-filter-cuisine">
+                <option value="">Any cuisine</option>
+                <option value="American">American</option>
+                <option value="Asian">Asian</option>
+                <option value="Chinese">Chinese</option>
+                <option value="French">French</option>
+                <option value="Indian">Indian</option>
+                <option value="Italian">Italian</option>
+                <option value="Japanese">Japanese</option>
+                <option value="Mediterranean">Mediterranean</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Middle Eastern">Middle Eastern</option>
+                <option value="Pakistani">Pakistani</option>
+                <option value="Thai">Thai</option>
+                <option value="Turkish">Turkish</option>
+              </select>
+            </label>
+            <label>Max cooking time
+              <select id="plan-filter-time">
+                <option value="">Any time</option>
+                <option value="20">≤ 20 min</option>
+                <option value="30">≤ 30 min</option>
+                <option value="45">≤ 45 min</option>
+                <option value="60">≤ 60 min</option>
+              </select>
+            </label>
+            <label>Difficulty
+              <select id="plan-filter-difficulty">
+                <option value="">Any level</option>
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+              </select>
+            </label>
+            <label>Diet
+              <select id="plan-filter-diet">
+                <option value="">Any</option>
+                <option value="vegan">Vegan</option>
+                <option value="non-vegan">Non-vegan</option>
+              </select>
+            </label>
+          </div>
+          <div class="meal-plan-ingredients">
+            <label class="sr-only" for="plan-ingredients">Ingredients for the plan</label>
+            <textarea id="plan-ingredients" rows="2" placeholder="tomato, egg, onion — or leave blank and load from fridge"></textarea>
+            <div class="meal-plan-actions">
+              <button type="button" class="btn ghost" id="plan-load-fridge" title="Pull ingredients from your Digital Fridge">Load from fridge</button>
+              <button type="button" class="btn primary" id="plan-generate">Generate plan</button>
+              <button type="button" class="btn ghost" id="plan-regenerate" hidden>Regenerate</button>
+              <button type="button" class="btn ghost" id="plan-save" hidden>Save plan</button>
+              <button type="button" class="btn ghost" id="plan-delete" hidden>Delete plan</button>
+            </div>
+          </div>
+        </div>
+        <p id="meal-plan-status" class="status" hidden></p>
+        <div id="meal-plan-grocery" class="meal-plan-grocery" hidden>
+          <div class="meal-plan-grocery-head">
+            <div>
+              <h3>Grocery list</h3>
+              <p class="muted meal-plan-grocery-hint">Built automatically from missing ingredients — items you already have are left out.</p>
+            </div>
+            <div class="meal-plan-grocery-actions">
+              <button type="button" class="btn ghost" id="plan-grocery-refresh" hidden>Refresh list</button>
+              <button type="button" class="btn ghost" id="plan-grocery-clear-checked" hidden>Clear checked</button>
+            </div>
+          </div>
+          <div id="meal-plan-grocery-list" class="meal-plan-grocery-list"></div>
+          <p id="meal-plan-grocery-empty" class="meal-plan-grocery-empty" hidden>You’re covered — nothing extra to buy for this plan.</p>
+        </div>
+        <div id="meal-plan-results" class="meal-plan-results" aria-live="polite"></div>
+      </section>
+
+      <section id="pantry" class="panel pantry fridge-panel-section">
+        <h2>Digital Fridge</h2>
+        <p class="section-sub">Your virtual fridge inventory — track expiry dates, get alerts before food spoils, and find recipes to reduce waste.</p>
+        <div id="pantry-guest" class="pantry-guest" hidden>
+          <div class="pantry-guest-card">
+            <span class="pantry-guest-icon" aria-hidden="true">🧊</span>
+            <h3>Sign in to manage your digital fridge</h3>
+            <p class="muted">Add ingredients with expiry dates, receive alerts, and get recipe ideas before food goes to waste.</p>
+            <button type="button" class="btn primary" id="pantry-login-btn">Log in or register</button>
+          </div>
+        </div>
+        <div id="pantry-shell" class="pantry-shell" hidden>
+          <header id="pantry-header" class="pantry-header"></header>
+          <div id="fridge-notify-bar" class="fridge-notify-bar" hidden>
+            <p id="fridge-notify-text" class="fridge-notify-text"></p>
+            <button type="button" class="btn ghost" id="fridge-notify-enable">Enable alerts</button>
+          </div>
+          <div id="pantry-quick-stats" class="pantry-quick-stats"></div>
+          <div class="pantry-columns">
+            <div class="dash-card pantry-add-card">
+              <h3>Add to fridge</h3>
+              <p class="muted pantry-add-hint">Set an expiry date — we&apos;ll remind you before items go bad.</p>
+              <form id="pantry-form" class="pantry-form">
+                <label>Ingredient<input type="text" id="pantry-ingredient" placeholder="e.g. spinach, chicken, rice" required autocomplete="off" /></label>
+                <label>Expiry date
+                  <input type="date" id="pantry-expiry" required />
+                  <span class="expiry-presets">
+                    <button type="button" class="expiry-preset" data-days="3">+3 days</button>
+                    <button type="button" class="expiry-preset" data-days="7">+7 days</button>
+                    <button type="button" class="expiry-preset" data-days="14">+14 days</button>
+                  </span>
+                </label>
+                <label>Quantity<input type="text" id="pantry-qty" placeholder="Qty" value="1" /></label>
+                <button type="submit" class="btn primary">Add to fridge</button>
+              </form>
+            </div>
+            <div class="dash-card pantry-scan-card">
+              <h3>Quick add</h3>
+              <p class="muted pantry-add-hint">Scan groceries with a photo, receipt, or barcode — then confirm into your fridge.</p>
+              <div class="pantry-scan-modes" role="group" aria-label="Scan mode">
+                <button type="button" class="pantry-scan-mode is-active" data-scan-mode="photo">Photo</button>
+                <button type="button" class="pantry-scan-mode" data-scan-mode="receipt">Receipt</button>
+                <button type="button" class="pantry-scan-mode" data-scan-mode="barcode">Barcode</button>
+              </div>
+              <div id="pantry-scan-photo-tools" class="pantry-scan-tools">
+                <div class="pantry-scan-actions">
+                  <label class="btn ghost pantry-scan-upload-btn" for="pantry-scan-input" id="pantry-scan-upload-label">Take / upload photo</label>
+                  <input type="file" id="pantry-scan-input" accept="image/*" capture="environment" hidden />
+                </div>
+              </div>
+              <div id="pantry-scan-barcode-tools" class="pantry-scan-tools" hidden>
+                <div class="pantry-barcode-row">
+                  <input type="text" id="pantry-barcode-input" inputmode="numeric" autocomplete="off" placeholder="Enter barcode number" maxlength="14" />
+                  <button type="button" class="btn primary" id="pantry-barcode-lookup">Look up</button>
+                </div>
+                <button type="button" class="btn ghost" id="pantry-barcode-camera">Scan with camera</button>
+                <p class="muted pantry-add-hint">Uses Open Food Facts. Camera scan works in Chrome/Edge on phone.</p>
+              </div>
+              <div id="pantry-scan-preview-wrap" class="pantry-scan-preview-wrap" hidden>
+                <img id="pantry-scan-preview" class="pantry-scan-preview" alt="Scan preview" />
+                <video id="pantry-barcode-video" class="pantry-barcode-video" playsinline muted hidden></video>
+              </div>
+              <p id="pantry-scan-status" class="status" hidden></p>
+              <div id="pantry-scan-results" class="pantry-scan-results" hidden></div>
+            </div>
+            <div class="dash-card pantry-alerts-card" id="pantry-alerts-card">
+              <h3>Expiry notifications</h3>
+              <p class="muted fridge-alerts-hint">Items expiring in the next 3 days appear here.</p>
+              <div id="expiry-alerts" class="expiry-alerts"></div>
+            </div>
+          </div>
+          <div id="low-stock" class="pantry-low-stock"></div>
+          <div class="dash-card pantry-items-card">
+            <h3>Fridge inventory</h3>
+            <div id="pantry-list" class="pantry-grid"></div>
+          </div>
+          <div id="shopping-panel" class="dash-card shopping-panel" hidden>
+            <h3>Grocery list</h3>
+            <p class="muted fridge-alerts-hint">Auto-filled from your meal plan or Match results — items you already have are skipped.</p>
+            <div id="shopping-list" class="shopping-grid"></div>
+          </div>
+        </div>
+        <p id="pantry-status" class="status" hidden></p>
+      </section>
+
+      <section id="surplus" class="panel surplus-panel" hidden>
+        <h2>Share surplus</h2>
+        <p class="section-sub">Offer leftover groceries locally before they spoil — neighbors can claim and message you.</p>
+        <div id="surplus-guest" class="pantry-guest" hidden>
+          <div class="pantry-guest-card">
+            <span class="pantry-guest-icon" aria-hidden="true">🤝</span>
+            <h3>Sign in to share or claim surplus food</h3>
+            <p class="muted">Post extras from your fridge and find nearby offers.</p>
+            <button type="button" class="btn primary" id="surplus-login-btn">Log in or register</button>
+          </div>
+        </div>
+        <div id="surplus-shell" class="surplus-shell" hidden>
+          <div class="surplus-toolbar">
+            <div class="surplus-tabs" role="tablist" aria-label="Surplus views">
+              <button type="button" class="surplus-tab is-active" data-surplus-view="near">Near you</button>
+              <button type="button" class="surplus-tab" data-surplus-view="mine">My offers</button>
+            </div>
+            <button type="button" class="btn ghost surplus-locate-btn" id="surplus-locate">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+              Use my location
+            </button>
+          </div>
+          <div class="surplus-compose" id="surplus-compose">
+            <header class="compose-head">
+              <p class="compose-kicker">Give food a second life</p>
+              <h3>Offer surplus food</h3>
+              <p class="compose-lead muted">Neighbors can claim leftovers before they spoil and message you to arrange pickup.</p>
+            </header>
+            <form id="surplus-form" class="surplus-form">
+              <label class="compose-field compose-field--hero">
+                <span class="compose-field-label">What are you sharing?</span>
+                <input type="text" id="surplus-ingredient" required maxlength="80" placeholder="e.g. leftover rice, spinach, bread" autocomplete="off" />
+              </label>
+              <div class="surplus-form-row">
+                <label class="compose-field">
+                  <span class="compose-field-label">Quantity</span>
+                  <input type="text" id="surplus-qty" value="1" maxlength="40" placeholder="e.g. 2 portions" />
+                </label>
+                <label class="compose-field">
+                  <span class="compose-field-label">Best before</span>
+                  <input type="date" id="surplus-expiry" />
+                </label>
+              </div>
+              <label class="compose-field">
+                <span class="compose-field-label">Area <span class="field-optional">optional</span></span>
+                <input type="text" id="surplus-area" maxlength="80" placeholder="e.g. Gulshan, Karachi" />
+              </label>
+              <label class="compose-field">
+                <span class="compose-field-label">Pickup note <span class="field-optional">optional</span></span>
+                <textarea id="surplus-note" rows="3" maxlength="400" placeholder="Pickup window, dietary notes, how to reach you…"></textarea>
+              </label>
+              <div class="compose-actions">
+                <button type="submit" class="btn primary compose-submit">Post offer</button>
+              </div>
+            </form>
+          </div>
+          <p id="surplus-status" class="status" hidden></p>
+          <div id="surplus-list" class="surplus-list" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <section id="posts" class="panel posts-panel" hidden>
+        <h2>Food Posts</h2>
+        <p class="section-sub posts-section-sub">See what people cook — share a photo, short reel, follow cooks, and save favorites.</p>
+        <div id="posts-guest" class="posts-guest-banner" hidden>
+          <span class="posts-guest-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/><circle cx="12" cy="16" r="1.2"/></svg>
+          </span>
+          <p>Browsing as guest. <button type="button" class="btn ghost inline-link" id="posts-login-btn">Log in</button> to post, like, comment, or save.</p>
+        </div>
+        <div id="posts-shell" class="posts-shell">
+          <div class="posts-toolbar" role="tablist" aria-label="Post filters">
+            <button type="button" class="posts-tab" data-posts-view="for_you" data-auth-only hidden>For you</button>
+            <button type="button" class="posts-tab" data-posts-view="following" data-auth-only hidden>Following</button>
+            <button type="button" class="posts-tab active" data-posts-view="trending">Trending</button>
+            <button type="button" class="posts-tab" data-posts-view="reels">Reels</button>
+            <button type="button" class="posts-tab" data-posts-view="all">Explore</button>
+            <button type="button" class="posts-tab" data-posts-view="saved" data-auth-only hidden>Saved</button>
+          </div>
+          <div class="posts-search-row">
+            <input type="search" id="user-search-input" placeholder="Search users…" autocomplete="off" maxlength="32" />
+            <div id="user-search-results" class="user-search-results" hidden></div>
+          </div>
+          <div class="posts-compose" id="posts-compose-card" hidden>
+            <button type="button" class="posts-compose-prompt" id="posts-compose-prompt">
+              <span class="posts-compose-prompt-avatar" aria-hidden="true">+</span>
+              <span class="posts-compose-prompt-copy">
+                <span class="posts-compose-prompt-text">Share a post or short reel</span>
+                <span class="posts-compose-prompt-sub">Photo, reel, recipe tags — show what you cooked</span>
+              </span>
+            </button>
+            <div id="posts-compose-body" class="posts-compose-body" hidden>
+              <header class="compose-head posts-compose-head">
+                <div>
+                  <p class="compose-kicker">From your kitchen</p>
+                  <h3 id="posts-compose-title">Create post</h3>
+                </div>
+                <button type="button" class="btn ghost posts-compose-collapse" id="posts-compose-collapse" aria-label="Collapse composer">Close</button>
+              </header>
+              <div class="post-type-toggle" role="group" aria-label="Post type">
+                <button type="button" class="post-type-btn is-active" id="post-type-post" data-type="post">Post</button>
+                <button type="button" class="post-type-btn" id="post-type-reel" data-type="reel">Reel</button>
+              </div>
+              <form id="post-form" class="post-form">
+                <label class="post-media-label" id="post-media-label">
+                  <input type="file" id="post-media" accept="image/*,video/mp4,video/webm,video/quicktime" required />
+                  <span class="post-media-drop">
+                    <span class="post-media-drop-icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="10" r="1.5"/><path d="m21 15-4.5-4.5L9 18"/></svg>
+                    </span>
+                    <span class="post-media-drop-title" id="post-media-label-text">Photo or video</span>
+                    <span class="post-media-drop-hint">Tap to upload · JPG, PNG, MP4, WebM</span>
+                  </span>
+                </label>
+                <p class="muted post-reel-hint" id="post-reel-hint" hidden>Vertical 9:16 (1080×1920) · up to 30 seconds · MP4, WebM, or MOV</p>
+                <div id="post-media-preview" class="post-media-preview" hidden></div>
+                <label class="compose-field">
+                  <span class="compose-field-label">Caption</span>
+                  <textarea id="post-caption" rows="3" placeholder="What did you cook today?" maxlength="2000"></textarea>
+                </label>
+                <div class="post-form-meta">
+                  <p class="post-form-meta-label">Tags <span class="field-optional">optional</span></p>
+                  <div class="post-form-row">
+                    <label class="compose-field">
+                      <span class="compose-field-label">Recipe</span>
+                      <input type="text" id="post-recipe-tag" placeholder="e.g. Shakshuka" autocomplete="off" />
+                    </label>
+                    <label class="compose-field">
+                      <span class="compose-field-label">Restaurant</span>
+                      <input type="text" id="post-restaurant-tag" placeholder="e.g. Cafe Aylanto" autocomplete="off" />
+                    </label>
+                  </div>
+                  <label class="compose-field">
+                    <span class="compose-field-label">Hashtags</span>
+                    <input type="text" id="post-hashtags" placeholder="#homemade #leftovers" autocomplete="off" />
+                  </label>
+                </div>
+                <div class="compose-actions">
+                  <button type="submit" class="btn primary compose-submit" id="post-submit-btn">Share post</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div id="posts-feed" class="posts-feed"></div>
+        </div>
+        <p id="posts-status" class="status" hidden></p>
+      </section>
+
+      <section id="restaurants" class="panel restaurants-panel" hidden>
+        <h2>Discover restaurants</h2>
+        <p class="section-sub">Search any location on the map, filter by rating or Halal / Haram, then save favorites or get directions.</p>
+        <div class="discover-controls">
+          <div class="discover-location-row">
+            <label class="sr-only" for="discover-location">Location</label>
+            <input type="search" id="discover-location" placeholder="e.g. Gulshan, Karachi — or tap Near me" autocomplete="off" />
+            <button type="button" class="btn ghost" id="discover-locate" title="Use my location">Near me</button>
+            <button type="button" class="btn primary" id="discover-search">Search</button>
+          </div>
+          <div id="discover-suggestions" class="discover-suggestions" hidden></div>
+          <div class="discover-filters filter-grid discover-filters--simple">
+            <label>Min rating
+              <select id="discover-rating">
+                <option value="">Any</option>
+                <option value="3">3+</option>
+                <option value="4">4+</option>
+                <option value="4.5">4.5+</option>
+              </select>
+            </label>
+            <label>Diet
+              <select id="discover-diet">
+                <option value="">Any</option>
+                <option value="halal">Halal</option>
+                <option value="haram">Haram</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <p id="discover-status" class="status" hidden></p>
+        <div class="discover-layout">
+          <div id="discover-map" class="discover-map" role="application" aria-label="Restaurant map"></div>
+          <div class="discover-side" id="discover-side">
+            <div id="discover-results" class="discover-results"></div>
+            <aside id="discover-detail" class="discover-detail" hidden aria-live="polite"></aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="messages" class="panel messages-panel" hidden>
+        <div id="messages-guest" class="messages-guest" hidden>
+          <div class="profile-guest-card">
+            <h3>Sign in to message</h3>
+            <p class="muted">Chat privately with other cooks on Petugram.</p>
+            <button type="button" class="btn primary" id="messages-login-btn">Log in or register</button>
+          </div>
+        </div>
+        <div id="messages-shell" class="messages-shell" hidden>
+          <div id="messages-layout" class="messages-layout">
+            <aside class="messages-inbox" aria-label="Conversations">
+              <div class="messages-inbox-head">
+                <h2>Inbox</h2>
+                <p class="messages-inbox-sub muted">Chats with other cooks</p>
+              </div>
+              <div class="msg-search-wrap">
+                <input type="search" id="msg-user-search" class="msg-user-search" placeholder="Find someone…" autocomplete="off" maxlength="32" aria-label="Search users to message" />
+                <button type="button" id="msg-search-clear" class="msg-search-clear" hidden aria-label="Clear search">×</button>
+                <div id="msg-user-results" class="msg-user-results" hidden></div>
+              </div>
+              <div id="msg-conversation-list" class="msg-conversation-list"></div>
+            </aside>
+            <div class="messages-chat">
+              <div id="messages-chat-empty" class="messages-chat-empty">
+                <div class="messages-chat-empty-card">
+                  <div class="messages-chat-empty-art" aria-hidden="true"></div>
+                  <h3>Your inbox</h3>
+                  <p>Pick a conversation or search for someone to say hello.</p>
+                </div>
+              </div>
+              <div id="messages-chat-active" class="messages-chat-active" hidden>
+                <header class="messages-chat-head">
+                  <button type="button" id="msg-back-btn" class="msg-back-btn" aria-label="Back to conversations">←</button>
+                  <button type="button" id="msg-chat-peer" class="msg-chat-peer" hidden>
+                    <span id="msg-chat-avatar" class="msg-avatar msg-avatar-lg"></span>
+                    <span class="msg-chat-peer-meta">
+                      <strong id="msg-chat-title">Chat</strong>
+                      <span class="msg-chat-peer-hint muted">View profile</span>
+                    </span>
+                  </button>
+                  <div class="msg-chat-actions">
+                    <button type="button" id="msg-delete-chat-btn" class="msg-icon-btn msg-delete-chat-btn" title="Delete conversation" aria-label="Delete conversation">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V5h6v2m-7 0v12a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V7M10 11v6M14 11v6"/></svg>
+                    </button>
+                  </div>
+                </header>
+                <div id="msg-thread" class="msg-thread" role="log" aria-live="polite" aria-relevant="additions"></div>
+                <form id="msg-compose-form" class="msg-compose-form">
+                  <div id="msg-attach-preview" class="msg-attach-preview" hidden></div>
+                  <div id="msg-emoji-picker" class="msg-emoji-picker" hidden>
+                    <div class="msg-emoji-picker-tabs" role="tablist" aria-label="Emoji and stickers">
+                      <button type="button" class="msg-emoji-tab active" data-emoji-tab="emoji" role="tab" aria-selected="true">Emoji</button>
+                      <button type="button" class="msg-emoji-tab" data-emoji-tab="stickers" role="tab" aria-selected="false">Stickers</button>
+                    </div>
+                    <div class="msg-emoji-toolbar">
+                      <input type="search" id="msg-emoji-search" class="msg-emoji-search" placeholder="Search emoji…" autocomplete="off" />
+                      <div id="msg-sticker-pack-tabs" class="msg-sticker-pack-tabs" hidden></div>
+                    </div>
+                    <div id="msg-emoji-panel" class="msg-emoji-panel" data-emoji-panel="emoji" role="tabpanel"></div>
+                    <div id="msg-sticker-panel" class="msg-emoji-panel msg-sticker-panel" data-emoji-panel="stickers" role="tabpanel" hidden></div>
+                  </div>
+                  <div class="msg-compose-box">
+                    <div class="msg-attach-tools" aria-label="Attachments">
+                      <button type="button" class="msg-attach-btn" id="msg-attach-emoji" title="Emoji & stickers" aria-label="Open emoji and stickers" aria-expanded="false" aria-controls="msg-emoji-picker">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8.5 10.2h.01M15.5 10.2h.01M8.8 14.2c1 .9 2.1 1.3 3.2 1.3s2.2-.4 3.2-1.3"/></svg>
+                      </button>
+                      <button type="button" class="msg-attach-btn" id="msg-attach-image" title="Send image" aria-label="Send image">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><circle cx="9" cy="10" r="1.6"/><path d="m7.5 16 3.2-3.4a1.2 1.2 0 0 1 1.7 0L20 16"/></svg>
+                      </button>
+                      <button type="button" class="msg-attach-btn" id="msg-attach-video" title="Send video" aria-label="Send video">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6.5" width="12.5" height="11" rx="2"/><path d="M15.5 10.2 20 7.8v8.4l-4.5-2.4z"/></svg>
+                      </button>
+                      <button type="button" class="msg-attach-btn" id="msg-attach-doc" title="Send document" aria-label="Send document">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3.5h6.2L18.5 8v12.5a1.5 1.5 0 0 1-1.5 1.5H8A1.5 1.5 0 0 1 6.5 20.5v-15A2 2 0 0 1 8 3.5z"/><path d="M14 3.5V8h4.5M9.5 13h5M9.5 16.5h5"/></svg>
+                      </button>
+                      <button type="button" class="msg-attach-btn" id="msg-attach-voice" title="Record voice" aria-label="Record voice">
+                        <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3.5" width="6" height="11" rx="3"/><path d="M6.5 11a5.5 5.5 0 0 0 11 0M12 16.5V20M9.5 20h5"/></svg>
+                      </button>
+                    </div>
+                    <label class="sr-only" for="msg-compose-input">Message</label>
+                    <textarea id="msg-compose-input" rows="1" placeholder="Write a message…" maxlength="2000" autocomplete="off"></textarea>
+                    <button type="submit" class="msg-send-btn" id="msg-send-btn" title="Send" aria-label="Send message">
+                      <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M3.4 11.2 19.2 3.7a1 1 0 0 1 1.4 1.1l-3.2 14.2a1 1 0 0 1-1.6.6l-4.3-3.3-2.4 2.5a.8.8 0 0 1-1.4-.5v-3.7l9.1-7.2-11.2 5.4-2.1-.8a1 1 0 0 1-.1-1.8z"/></svg>
+                    </button>
+                  </div>
+                  <input type="file" id="msg-file-image" accept="image/jpeg,image/png,image/webp,image/gif" hidden />
+                  <input type="file" id="msg-file-video" accept="video/mp4,video/webm,video/quicktime" hidden />
+                  <input type="file" id="msg-file-doc" accept=".pdf,.doc,.docx,.xls,.xlsx,.ppt,.pptx,.txt,.csv,.zip,application/pdf,text/plain" hidden />
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p id="messages-status" class="status" hidden></p>
+      </section>
+
+      <section id="profile" class="panel profile" hidden>
+        <div id="profile-top-bar" class="profile-top-bar" hidden>
+          <button type="button" class="btn ghost profile-back-btn" id="profile-back-btn">← Back to my profile</button>
+        </div>
+        <div id="profile-guest" class="profile-guest" hidden>
+          <div class="profile-guest-card">
+            <span class="profile-guest-icon" aria-hidden="true">👤</span>
+            <h3>Sign in to unlock your profile</h3>
+            <p class="muted">Add a photo & bio, follow friends, and save recipes & restaurants.</p>
+            <button type="button" class="btn primary" id="profile-login-btn">Log in or register</button>
+          </div>
+        </div>
+        <div id="profile-shell" class="profile-shell" hidden>
+          <header id="profile-header" class="profile-header"></header>
+          <div id="profile-action-row" class="profile-action-row"></div>
+          <div id="profile-edit-panel" class="profile-edit-panel" hidden>
+            <div class="profile-bio-settings" id="profile-bio-settings">
+              <h3>Edit profile</h3>
+              <p class="muted profile-section-sub">Update the name and bio shown on your profile.</p>
+              <form id="profile-bio-form" class="profile-bio-form" action="#" method="post">
+                <label for="profile-display-name">Name <span class="field-optional">(shown below username)</span>
+                  <input type="text" id="profile-display-name" maxlength="80" placeholder="Your name" autocomplete="name" />
+                </label>
+                <label for="profile-country">Location
+                  <select id="profile-country">
+                    <option value="PK">Pakistan</option>
+                    <option value="IN">India</option>
+                    <option value="BD">Bangladesh</option>
+                    <option value="AE">United Arab Emirates</option>
+                    <option value="SA">Saudi Arabia</option>
+                    <option value="GB">United Kingdom</option>
+                    <option value="US">United States</option>
+                    <option value="CA">Canada</option>
+                    <option value="AU">Australia</option>
+                    <option value="GLOBAL">Worldwide average</option>
+                  </select>
+                </label>
+                <p class="muted profile-country-hint">Sets local currency and rates for money saved &amp; waste reduced.</p>
+                <label for="profile-bio">Bio
+                  <textarea id="profile-bio" rows="3" maxlength="500" placeholder="Write a short bio about how you cook…"></textarea>
+                </label>
+                <div class="profile-bio-actions">
+                  <button type="submit" class="btn primary profile-bio-save" id="profile-bio-save" disabled>Save profile</button>
+                  <span id="profile-bio-hint" class="profile-bio-hint muted" hidden></span>
+                </div>
+              </form>
+            </div>
+            <div class="profile-privacy-card">
+              <h3>Account visibility</h3>
+              <p class="muted profile-section-sub">Control who can see your posts and whether you appear in search.</p>
+              <div class="profile-toggle-row">
+                <span class="profile-toggle-label">Profile</span>
+                <div class="profile-toggle-group" role="group" aria-label="Public or private">
+                  <button type="button" class="profile-toggle-btn" id="profile-privacy-public" data-value="public">Public</button>
+                  <button type="button" class="profile-toggle-btn" id="profile-privacy-private" data-value="private">Private</button>
+                </div>
+              </div>
+              <div class="profile-toggle-row">
+                <span class="profile-toggle-label">Status</span>
+                <div class="profile-toggle-group" role="group" aria-label="Active or not active">
+                  <button type="button" class="profile-toggle-btn" id="profile-status-active" data-value="active">Active</button>
+                  <button type="button" class="profile-toggle-btn" id="profile-status-inactive" data-value="inactive">Not active</button>
+                </div>
+              </div>
+            </div>
+            <div class="profile-danger-card" id="profile-danger-card">
+              <div class="profile-danger-copy">
+                <h3>Delete account</h3>
+                <p class="muted">Permanently remove your profile, pantry, and history. You’ll confirm with your password.</p>
+              </div>
+              <button type="button" class="btn danger" id="delete-account-btn">Delete account</button>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="profile-main">
+              <div id="profile-private-lock" class="profile-private-lock" hidden>
+                <h3>This account is private</h3>
+                <p class="muted">Follow to see their recipe posts.</p>
+              </div>
+              <div id="profile-inactive-banner" class="profile-inactive-banner" hidden>
+                <h3>Account not active</h3>
+                <p class="muted">This profile is currently inactive.</p>
+              </div>
+              <div id="profile-tabs" class="profile-tabs" role="tablist" aria-label="Profile sections">
+                <button type="button" class="profile-tab active" data-profile-tab="posts" role="tab" aria-selected="true">Posts</button>
+                <button type="button" class="profile-tab" data-profile-tab="impact" role="tab" aria-selected="false">Impact</button>
+                <button type="button" class="profile-tab" data-profile-tab="recipes" role="tab" aria-selected="false">Recipes</button>
+                <button type="button" class="profile-tab" data-profile-tab="saved" role="tab" aria-selected="false">Saved</button>
+              </div>
+              <div id="profile-tab-posts" class="profile-tab-panel" data-profile-panel="posts" role="tabpanel">
+                <section id="profile-posts-section" class="profile-section-card">
+                  <div class="profile-section-head">
+                    <div>
+                      <h3>Posts</h3>
+                      <p class="profile-section-sub muted">Meals and leftovers you’ve shared</p>
+                    </div>
+                  </div>
+                  <div id="profile-posts-grid" class="profile-posts-grid"></div>
+                </section>
+              </div>
+              <div id="profile-tab-impact" class="profile-tab-panel" data-profile-panel="impact" role="tabpanel" hidden>
+                <section id="profile-impact-section" class="profile-section-card impact-dashboard">
+                  <div class="profile-section-head">
+                    <div>
+                      <h3>Impact</h3>
+                      <p class="profile-section-sub muted">Money saved and food waste reduced — tuned to your location</p>
+                    </div>
+                  </div>
+                  <div id="impact-dashboard" class="impact-dashboard-body" aria-live="polite"></div>
+                </section>
+              </div>
+              <div id="profile-tab-recipes" class="profile-tab-panel" data-profile-panel="recipes" role="tabpanel" hidden>
+                <section id="profile-recipes-section" class="profile-section-card">
+                  <div class="profile-section-head profile-list-head">
+                    <div>
+                      <h3>Recipes</h3>
+                      <p class="profile-section-sub muted">Cook history and stats</p>
+                    </div>
+                    <button type="button" class="btn ghost profile-clear-btn" id="clear-history-btn" hidden>Clear all</button>
+                  </div>
+                  <div id="profile-stats" class="profile-stats" aria-label="Activity stats"></div>
+                  <div id="history-list" class="profile-history"></div>
+                </section>
+              </div>
+              <div id="profile-tab-saved" class="profile-tab-panel" data-profile-panel="saved" role="tabpanel" hidden>
+                <section id="profile-saved-section" class="profile-section-card">
+                  <div class="profile-section-head profile-list-head">
+                    <div>
+                      <h3>Saved</h3>
+                      <p class="profile-section-sub muted">Favorites and restaurants</p>
+                    </div>
+                    <button type="button" class="btn ghost profile-clear-btn" id="clear-favorites-btn" hidden>Clear all</button>
+                  </div>
+                  <div id="favorites-list" class="profile-favorites"></div>
+                  <form id="save-restaurant-form" class="profile-inline-form">
+                    <input type="text" id="restaurant-name-input" placeholder="Restaurant name" maxlength="120" required />
+                    <input type="text" id="restaurant-area-input" placeholder="Area (optional)" maxlength="80" />
+                    <button type="submit" class="btn primary">Save</button>
+                  </form>
+                  <div id="recommended-restaurants" class="profile-restaurants profile-restaurants--recommended" hidden></div>
+                  <div id="saved-restaurants-list" class="profile-restaurants"></div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p id="profile-status" class="status" hidden></p>
+      </section>
+
+      <section id="admin" class="panel admin-panel" hidden>
+        <h2>Admin Dashboard</h2>
+        <p class="section-sub">Platform overview, user accounts, and role management.</p>
+        <div id="admin-stats" class="admin-stats"></div>
+        <div id="admin-users" class="admin-users"></div>
+        <p id="admin-status" class="status" hidden></p>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast-host" class="toast-host" aria-live="polite"></div>
+
+  <dialog id="confirm-dialog" class="auth-dialog confirm-dialog">
+    <form id="confirm-dialog-form" method="dialog">
+      <h3 id="confirm-dialog-title">Confirm</h3>
+      <p id="confirm-dialog-message" class="muted confirm-dialog-message"></p>
+      <div class="auth-actions">
+        <button type="submit" class="btn danger" id="confirm-dialog-ok" value="ok">Confirm</button>
+        <button type="button" class="btn ghost" id="confirm-dialog-cancel" value="cancel">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog id="post-detail-dialog" class="post-detail-dialog">
+    <div class="post-detail-head">
+      <h3>Post</h3>
+      <button type="button" class="btn ghost" id="post-detail-close" aria-label="Close">✕</button>
+    </div>
+    <div id="post-detail-body" class="post-detail-body posts-feed"></div>
+  </dialog>
+
+  <dialog id="follow-list-dialog" class="follow-list-dialog">
+    <div class="follow-list-head">
+      <h3 id="follow-list-title">Followers</h3>
+      <button type="button" class="btn ghost" id="follow-list-close" aria-label="Close">✕</button>
+    </div>
+    <ul id="follow-list-body" class="follow-list-body"></ul>
+  </dialog>
+
+  <dialog id="story-viewer" class="story-viewer">
+    <div class="story-viewer-shell">
+      <div class="story-progress" id="story-progress" aria-hidden="true"></div>
+      <header class="story-viewer-head">
+        <div class="story-viewer-user">
+          <span id="story-viewer-avatar" class="story-viewer-avatar" aria-hidden="true"></span>
+          <div class="story-viewer-meta">
+            <strong id="story-viewer-name">Story</strong>
+            <span id="story-viewer-time" class="muted">Just now</span>
+          </div>
+        </div>
+        <div class="story-viewer-actions">
+          <button type="button" class="btn ghost story-delete-btn" id="story-delete-btn" hidden>Delete</button>
+          <button type="button" class="btn ghost" id="story-viewer-close" aria-label="Close story">✕</button>
+        </div>
+      </header>
+      <div class="story-viewer-stage" id="story-viewer-stage">
+        <button type="button" class="story-nav story-nav-prev" id="story-nav-prev" aria-label="Previous story"></button>
+        <img id="story-viewer-image" class="story-viewer-media" alt="Story" hidden />
+        <video id="story-viewer-video" class="story-viewer-media story-viewer-video" playsinline hidden></video>
+        <button type="button" class="story-sound-btn" id="story-sound-btn" hidden aria-label="Toggle story sound" title="Sound">
+          <span class="story-sound-on" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg>
+          </span>
+          <span class="story-sound-off" aria-hidden="true" hidden>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></svg>
+          </span>
+        </button>
+        <button type="button" class="story-nav story-nav-prev" id="story-nav-prev" aria-label="Previous story"></button>
+        <button type="button" class="story-nav story-nav-next" id="story-nav-next" aria-label="Next story"></button>
+      </div>
+      <p id="story-viewer-caption" class="story-viewer-caption" hidden></p>
+      <button type="button" class="story-views-btn" id="story-views-btn" hidden aria-label="See who viewed this story">
+        <span class="story-views-icon" aria-hidden="true">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        <span id="story-views-label">Seen by 0</span>
+      </button>
+      <div class="story-viewers-sheet" id="story-viewers-sheet" hidden>
+        <div class="story-viewers-sheet-head">
+          <strong>Seen by</strong>
+          <button type="button" class="btn ghost" id="story-viewers-close" aria-label="Close viewers">✕</button>
+        </div>
+        <p class="story-viewers-note muted" id="story-viewers-note">People who opened this story</p>
+        <ul class="story-viewers-list" id="story-viewers-list"></ul>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>
