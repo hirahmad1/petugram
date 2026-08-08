@@ -157,7 +157,11 @@ function showPanel(name, opts = {}) {
   if (name !== "posts") document.body.classList.remove("on-reels");
   document.body.classList.toggle("slim-chrome", name !== "pantry");
   document.querySelectorAll(".nav-link[data-panel]").forEach((link) => {
-    link.classList.toggle("active", link.dataset.panel === name);
+    const on = link.dataset.panel === name;
+    link.classList.toggle("active", on);
+    if (on && window.matchMedia("(max-width: 900px)").matches) {
+      link.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+    }
   });
   const activePanel = document.getElementById(name);
   if (activePanel && !opts.skipEnter) {
