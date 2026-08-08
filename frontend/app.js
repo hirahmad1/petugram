@@ -105,7 +105,19 @@ function setStatus(el, message, isError = false) {
   el.hidden = !message;
   el.textContent = message || "";
   el.classList.toggle("error", isError);
-  if (message) el.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
+
+function scrollMobileNavToActive(link) {
+  const nav = link?.closest(".main-nav");
+  if (!nav || !link) return;
+  const left = link.offsetLeft - (nav.clientWidth - link.clientWidth) / 2;
+  nav.scrollTo({ left: Math.max(0, left), behavior: "smooth" });
+}
+
+function resetPageScroll() {
+  window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
 }
 
 function applyTheme(mode) {
@@ -160,7 +172,8 @@ function showPanel(name, opts = {}) {
     const on = link.dataset.panel === name;
     link.classList.toggle("active", on);
     if (on && window.matchMedia("(max-width: 900px)").matches) {
-      link.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+      // Horizontal only — link.scrollIntoView() also jumps the page vertically.
+      scrollMobileNavToActive(link);
     }
   });
   const activePanel = document.getElementById(name);
@@ -174,7 +187,7 @@ function showPanel(name, opts = {}) {
     history.replaceState(null, "", `#${name}`);
   }
 
-  // Scroll only when explicitly requested — never jump on normal nav/icon clicks.
+  // Keep the viewport at the top unless a specific in-panel target is requested.
   if (opts.scrollTo) {
     requestAnimationFrame(() => {
       document.getElementById(opts.scrollTo)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -182,8 +195,14 @@ function showPanel(name, opts = {}) {
         document.getElementById(opts.focus)?.focus({ preventScroll: true });
       }
     });
-  } else if (opts.scrollTop) {
-    window.scrollTo({ top: 0, behavior: "auto" });
+  } else if (!opts.skipScroll) {
+    resetPageScroll();
+    requestAnimationFrame(resetPageScroll);
+    if (opts.focus) {
+      requestAnimationFrame(() => {
+        document.getElementById(opts.focus)?.focus({ preventScroll: true });
+      });
+    }
   } else if (opts.focus) {
     requestAnimationFrame(() => {
       document.getElementById(opts.focus)?.focus({ preventScroll: true });
@@ -216,14 +235,17 @@ function initNav() {
   const hash = location.hash.slice(1);
   const valid = ["matcher", "pantry", "meal-plan", "posts", "restaurants", "surplus", "messages", "profile", "admin"];
   if (hash && valid.includes(hash)) {
-    showPanel(hash, { skipScroll: true });
+    showPanel(hash);
   } else {
-    showPanel("pantry", { skipScroll: true });
+    showPanel("pantry");
   }
+  // Undo browser hash-anchor jump to #panel ids.
+  resetPageScroll();
+  requestAnimationFrame(resetPageScroll);
 
   window.addEventListener("hashchange", () => {
     const panel = location.hash.slice(1);
-    if (panel && document.getElementById(panel)) showPanel(panel, { skipScroll: true });
+    if (panel && document.getElementById(panel)) showPanel(panel);
   });
 }
 
