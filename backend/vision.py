@@ -339,7 +339,16 @@ class FoodScanner:
             if m.strip() and m.strip() != self.vlm_model
         ]
         self.gemini_key = os.getenv("GEMINI_API_KEY", "").strip()
-        self.gemini_model = os.getenv("GEMINI_VISION_MODEL", "gemini-2.0-flash").strip()
+        # gemini-2.0-flash was shut down (June 2026); prefer current Flash models.
+        self.gemini_model = os.getenv("GEMINI_VISION_MODEL", "gemini-2.5-flash").strip()
+        self.gemini_fallbacks = [
+            m.strip()
+            for m in os.getenv(
+                "GEMINI_VISION_FALLBACKS",
+                "gemini-2.5-flash,gemini-flash-latest,gemini-2.5-flash-lite",
+            ).split(",")
+            if m.strip() and m.strip() != self.gemini_model
+        ]
         self.openai_key = os.getenv("OPENAI_API_KEY", "").strip()
         self.openai_model = os.getenv("OPENAI_VISION_MODEL", "gpt-4o-mini").strip()
 
@@ -456,10 +465,6 @@ class FoodScanner:
         if not self.gemini_key:
             raise RuntimeError("GEMINI_API_KEY not set")
         mime = _guess_mime(image_bytes, filename)
-        url = (
-            f"https://generativelanguage.googleapis.com/v1beta/models/"
-            f"{self.gemini_model}:generateContent?key={self.gemini_key}"
-        )
         payload = {
             "contents": [
                 {
@@ -476,14 +481,27 @@ class FoodScanner:
             ],
             "generationConfig": {"temperature": 0.1, "maxOutputTokens": 256},
         }
+        models = [self.gemini_model, *self.gemini_fallbacks]
+        errors: list[str] = []
         with httpx.Client(timeout=self.timeout) as client:
-            res = client.post(url, json=payload)
-            if res.status_code >= 400:
-                raise RuntimeError(f"Gemini {res.status_code}: {res.text[:240]}")
-            data = res.json()
-        parts = (((data.get("candidates") or [{}])[0].get("content") or {}).get("parts") or [])
-        texts = [str(p.get("text") or "") for p in parts if isinstance(p, dict)]
-        return "\n".join(t for t in texts if t).strip()
+            for model in models:
+                url = (
+                    f"https://generativelanguage.googleapis.com/v1beta/models/"
+                    f"{model}:generateContent?key={self.gemini_key}"
+                )
+                res = client.post(url, json=payload)
+                if res.status_code >= 400:
+                    errors.append(f"{model}: {res.status_code} {res.text[:160]}")
+                    continue
+                data = res.json()
+                parts = (((data.get("candidates") or [{}])[0].get("content") or {}).get("parts") or [])
+                texts = [str(p.get("text") or "") for p in parts if isinstance(p, dict)]
+                text = "\n".join(t for t in texts if t).strip()
+                if text:
+                    self.gemini_model = model
+                    return text
+                errors.append(f"{model}: empty response")
+        raise RuntimeError("; ".join(errors[:3]) or "Gemini vision failed")
 
     def _ask_openai(self, image_bytes: bytes, filename: str = "", prompt: str | None = None) -> str:
         if not self.openai_key:
