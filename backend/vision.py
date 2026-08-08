@@ -334,7 +334,7 @@ class FoodScanner:
             m.strip()
             for m in os.getenv(
                 "HF_VISION_VLM_FALLBACKS",
-                "google/gemma-3-4b-it",
+                "google/gemma-3-4b-it,Salesforce/blip-image-captioning-large",
             ).split(",")
             if m.strip() and m.strip() != self.vlm_model
         ]
@@ -431,6 +431,13 @@ class FoodScanner:
     ) -> tuple[str, str]:
         """Try VLMs in order; return (raw_text, model_id)."""
         models = [self.vlm_model, *[m for m in self.vlm_fallbacks if m != self.vlm_model]]
+        # Always keep a cheap captioning fallback at the end.
+        for blip in (
+            "Salesforce/blip-image-captioning-large",
+            "Salesforce/blip-image-captioning-base",
+        ):
+            if blip not in models:
+                models.append(blip)
         errors: list[str] = []
         for model in models:
             try:
@@ -443,7 +450,7 @@ class FoodScanner:
             except Exception as exc:  # noqa: BLE001
                 errors.append(f"{model}: {exc}")
                 continue
-        raise RuntimeError("; ".join(errors) or "All vision models failed")
+        raise RuntimeError("; ".join(errors[:3]) or "All vision models failed")
 
     def _ask_gemini(self, image_bytes: bytes, filename: str = "", prompt: str | None = None) -> str:
         if not self.gemini_key:
@@ -601,18 +608,26 @@ class FoodScanner:
 
         if not raw_text:
             if not self.token:
-                raise RuntimeError("HF_TOKEN is required for AI food scanning")
+                raise RuntimeError(
+                    "AI scan needs GEMINI_API_KEY (recommended) or HF_TOKEN. "
+                    "Add one in Railway Variables, then redeploy."
+                )
             try:
                 raw_text, model_used = self._ask_vlm(image_bytes, filename, prompt)
                 source = f"huggingface:{model_used}"
             except Exception as exc:  # noqa: BLE001
                 warnings.append(f"huggingface: {exc}")
+                detail = str(exc).strip().replace("\n", " ")[:220]
                 raise RuntimeError(
-                    "Could not detect ingredients. Check HF_TOKEN / model access, "
-                    "or set GEMINI_API_KEY for better results."
+                    "Could not detect ingredients — vision API failed. "
+                    f"({detail}) "
+                    "Fix: set GEMINI_API_KEY in Railway (Google AI Studio), or check HF_TOKEN / model access."
                 ) from exc
 
         ingredients = parse_ingredient_list(raw_text)
+        # Caption-style models often return prose; harvest known foods from it.
+        if not ingredients:
+            ingredients = extract_ingredients_from_text(raw_text)
         no_food_hint = bool(
             re.search(
                 r"\b(no food|not food|no ingredients?|nothing edible|empty array|\[\s*\])\b",

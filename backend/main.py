@@ -490,6 +490,9 @@ def health():
         "google_search": bool(google_search and google_search.use_api),
         "web_recipe_search": bool(google_search and google_search.enabled),
         "posts_api": post_store is not None,
+        "vision_hf": bool(os.getenv("HF_TOKEN", "").strip()),
+        "vision_gemini": bool(os.getenv("GEMINI_API_KEY", "").strip()),
+        "vision_openai": bool(os.getenv("OPENAI_API_KEY", "").strip()),
     }
 
 
